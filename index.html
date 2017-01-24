@@ -151,6 +151,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh</li>
+
 <li>$:/config/PageControlButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button</li>
 
 <li>$:/config/Plugins/Disabled/$:/plugins/tongerner/toolbar</li>
@@ -325,6 +327,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>anna karinina</li>
+
 <li>Contacts</li>
 
 <li>ContactTable</li>
@@ -334,6 +338,8 @@ Error message and password prompt
 <li>Draft of 'New Tiddler'</li>
 
 <li>Jack</li>
+
+<li>john</li>
 
 <li>licenses</li>
 
@@ -401,6 +407,9 @@ Error message and password prompt
 <pre>show</pre>
 </div>
 <div created="20170124185949000" modified="20170124203036600" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler">
+<pre>show</pre>
+</div>
+<div created="20170124205316300" modified="20170124205316300" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh">
 <pre>show</pre>
 </div>
 <div created="20170124190135400" modified="20170124190135400" title="$:/config/PageControlButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button">
@@ -9515,8 +9524,8 @@ html .tc-tiddler-controls button {
 <div created="20170124190441900" modified="20170124190441900" title="$:/state/plugin-info--896887961-$:/plugins/tongerner/toolbar">
 <pre>yes</pre>
 </div>
-<div created="20170124153928000" modified="20170124201912600" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20170124153928000" modified="20170124204914200" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20170124180327900" modified="20170124194851200" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -9539,8 +9548,8 @@ html .tc-tiddler-controls button {
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170124203403300" title="$:/state/tab/sidebar--1835078512">
-<pre>tableofcontents</pre>
+<div created="20170124170956000" modified="20170124205245300" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
@@ -9568,22 +9577,22 @@ html .tc-tiddler-controls button {
     }
 }</pre>
 </div>
-<div created="20170124165957300" modified="20170124193057800" title="$:/temp/NewTagName/email">
+<div created="20170124165957300" modified="20170124205139200" title="$:/temp/NewTagName/email">
+<pre>anna@koomail.com</pre>
+</div>
+<div created="20170124163340000" modified="20170124205202400" title="$:/temp/NewTagName/group">
 <pre></pre>
 </div>
-<div created="20170124163340000" modified="20170124163350000" title="$:/temp/NewTagName/group">
+<div created="20170124163352000" modified="20170124205215500" title="$:/temp/NewTagName/location">
 <pre></pre>
 </div>
-<div created="20170124163352000" modified="20170124163358400" title="$:/temp/NewTagName/location">
+<div created="20170124163402000" modified="20170124205222000" title="$:/temp/NewTagName/mobilenumber">
 <pre></pre>
 </div>
-<div created="20170124163402000" modified="20170124181502600" title="$:/temp/NewTagName/mobilenumber">
+<div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124163411300" modified="20170124163755800" title="$:/temp/NewTagName/phonenumber">
-<pre></pre>
-</div>
-<div created="20170124171931100" modified="20170124204401700" title="$:/temp/search">
+<div created="20170124171931100" modified="20170124205329200" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -9701,8 +9710,25 @@ html .tc-tiddler-controls button {
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170124153416900" modified="20170124202943900" tags="" title="Contacts">
-<pre>&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
+<div created="20170124205118500" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170124205228800" tags="contact" title="anna karinina">
+<pre>!Mobile
+&lt;&lt;mobile&gt;&gt;
+!SMS
+&lt;&lt;sms&gt;&gt;
+!Phone
+&lt;&lt;phone&gt;&gt;
+!E-mail
+&lt;&lt;email&gt;&gt;
+
+! Other
+
+{{!!jabber}}
+</pre>
+</div>
+<div created="20170124153416900" modified="20170124205521300" tags="" title="Contacts">
+<pre>Right now only the letter A and J are indexed for a difficulty of mine with the macro. check the [[todo]] if you feel like helping!
+
+&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
 &lt;div class=&quot;tc-search&quot;&gt;
 &lt;$edit-text tiddler=&quot;$:/temp/search&quot; type=&quot;search&quot; tag=&quot;input&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-popup-handle&quot;/&gt;
 &lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
@@ -9783,7 +9809,33 @@ html .tc-tiddler-controls button {
 !J
 ---
 
-&lt;&lt;letter j J&gt;&gt;
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[]] [prefix[a]] -[prefix[$:/]] &quot;&gt;
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+&lt;h2&gt;Mobile&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
+
+&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+
+&lt;&lt;mobilecall&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;h2&gt;Phone&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
+&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;phonecall&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;h2&gt; Email &lt;/h2&gt;
+
+&lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
+&lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;mailto&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;/$list&gt;
 
 !K
 ---
@@ -9863,6 +9915,23 @@ html .tc-tiddler-controls button {
 &lt;&lt;email&gt;&gt;
 
 </pre>
+</div>
+<div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170124205100600" phonenumber="477757" tags="contact $:/tags/template" title="john">
+<pre>!Mobile
+&lt;&lt;mobile&gt;&gt;
+!SMS
+&lt;&lt;sms&gt;&gt;
+!Phone
+&lt;&lt;phone&gt;&gt;
+!E-mail
+&lt;&lt;email&gt;&gt;
+
+! Other
+
+{{!!jabber}}
+
+
+NEVER mention his cousin</pre>
 </div>
 <div created="20170124162718600" modified="20170124172418600" tags="" title="licenses">
 <pre>The following images are licensed with [[Creative Common 3.0 BY|http://creativecommons.org/licenses/by/3.0/]] from [[Simpleicon|http://www.flaticon.com/authors/simpleicon]]
@@ -10360,12 +10429,13 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;&lt;toc &quot;menu&quot;&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20170124175559400" modified="20170124203738600" tags="menu" title="todo">
+<div created="20170124175559400" modified="20170124205305100" tags="menu" title="todo">
 <pre>* call the [[style macro|$:/contacts/macro/connectstyle]] from within the [[connect macro|$:/contacts/macro/connect]], so i only have to edit one style for all
 ** without breaking everything
 * how can I push cariables into [[$:/contacts/macro/AZorder]], so that in [[Contacts]] I don't need to copy and paste everything?
 *check the style and see if it fits your phone (looks like)
 * adjust sidebar and make it hidden in phone by default
+*remove tag suggestion
 
 
 
