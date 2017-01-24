@@ -119,6 +119,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/DefaultSidebarTab</li>
+
 <li>$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/bold</li>
 
 <li>$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/clear</li>
@@ -223,6 +225,8 @@ Error message and password prompt
 
 <li>$:/contacts/img/sms.svg</li>
 
+<li>$:/contacts/macro/AZorder</li>
+
 <li>$:/contacts/macro/connect</li>
 
 <li>$:/contacts/macro/connectstyle</li>
@@ -234,6 +238,8 @@ Error message and password prompt
 <li>$:/contacts/ui/Buttons/addContact</li>
 
 <li>$:/core</li>
+
+<li>$:/core/ui/Buttons/encryption</li>
 
 <li>$:/DefaultTiddlers</li>
 
@@ -279,6 +285,8 @@ Error message and password prompt
 
 <li>$:/state/tab--1963855381</li>
 
+<li>$:/state/tab--2016259090</li>
+
 <li>$:/state/tab--86143343</li>
 
 <li>$:/state/tab-1749438307</li>
@@ -321,8 +329,6 @@ Error message and password prompt
 
 <li>ContactTable</li>
 
-<li>Draft of '$:/contacts/Template/NewContact 1'</li>
-
 <li>Draft of 'New Tiddler 1'</li>
 
 <li>Draft of 'New Tiddler'</li>
@@ -331,7 +337,11 @@ Error message and password prompt
 
 <li>licenses</li>
 
+<li>structure</li>
+
 <li>Table Macros</li>
+
+<li>tableofcontents</li>
 
 <li>todo</li>
 
@@ -345,6 +355,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20170124203254800" modified="20170124203254800" title="$:/config/DefaultSidebarTab">
+<pre>tableofcontents</pre>
+</div>
 <div created="20170124190217000" modified="20170124190230900" title="$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/bold">
 <pre>show</pre>
 </div>
@@ -378,8 +391,8 @@ Error message and password prompt
 <div created="20170124190222100" modified="20170124190232400" title="$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/underline">
 <pre>show</pre>
 </div>
-<div created="20170124190136500" modified="20170124190137700" title="$:/config/PageControlButtons/Visibility/$:/contacts/ui/Buttons/addContact">
-<pre>show</pre>
+<div created="20170124190136500" modified="20170124203039200" title="$:/config/PageControlButtons/Visibility/$:/contacts/ui/Buttons/addContact">
+<pre>hide</pre>
 </div>
 <div created="20170124185951900" modified="20170124190635900" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/control-panel">
 <pre>show</pre>
@@ -387,8 +400,8 @@ Error message and password prompt
 <div created="20170124185945000" modified="20170124185945000" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
 </div>
-<div created="20170124185949000" modified="20170124185949000" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler">
-<pre>hide</pre>
+<div created="20170124185949000" modified="20170124203036600" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler">
+<pre>show</pre>
 </div>
 <div created="20170124190135400" modified="20170124190135400" title="$:/config/PageControlButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button">
 <pre>hide</pre>
@@ -480,7 +493,7 @@ Error message and password prompt
 <div created="20170124190301900" modified="20170124190301900" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-editortoolbar-button">
 <pre>hide</pre>
 </div>
-<div created="20170124190239300" modified="20170124190239300" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-sidebar">
+<div created="20170124190239300" modified="20170124203225100" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-sidebar">
 <pre>hide</pre>
 </div>
 <div created="20170124190310000" modified="20170124190310000" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button">
@@ -639,7 +652,7 @@ Error message and password prompt
 &lt;/svg&gt;
 </pre>
 </div>
-<div created="20170124171021400" modified="20170124171059500" tags="structure" title="$:/contacts/img/sms.svg" type="image/svg+xml">
+<div created="20170124171021400" modified="20170124204417000" title="$:/contacts/img/sms.svg" type="image/svg+xml">
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;
 &lt;!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;
 &lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;
@@ -684,16 +697,46 @@ Error message and password prompt
 &lt;/svg&gt;
 </pre>
 </div>
-<div created="20170124171122600" mobilenumber="" modified="20170124193419600" tags="$:/tags/Macro" title="$:/contacts/macro/connect">
+<div created="20170124201127900" modified="20170124202741700" tags="$:/tags/Macro" title="$:/contacts/macro/AZorder">
+<pre>\define letter()
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[$low$]] [prefix[$high$]]&quot;&gt;
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+&lt;h2&gt;Mobile&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
+
+&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+
+&lt;&lt;mobilecall&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;h2&gt;Phone&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
+&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;phonecall&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;h2&gt; Email &lt;/h2&gt;
+
+&lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
+&lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;mailto&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;/$list&gt;
+
+
+\end</pre>
+</div>
+<div created="20170124171122600" mobilenumber="" modified="20170124200720000" tags="$:/tags/Macro" title="$:/contacts/macro/connect">
 <pre>\define mobilecall(mobilenumber)
 &lt;a href=&quot;tel:$(mobilenumber)$&quot;&gt;
 
 &lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
 
-
- [img width=20 [$:/contacts/img/mobilecall.svg]]   Call {{!!title}}
-
-
+[img width=20 [$:/contacts/img/mobilecall.svg]]   Call {{!!title}}
 \end
 
 
@@ -708,12 +751,12 @@ Error message and password prompt
 \end
 
 \define mailto(email)
-&lt;a href=&quot;mailto:$(email)$&quot;&gt; 
-
+&lt;a href=&quot;mailto:$(email)$&quot;&gt;
 &lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
 
 
-[img width=20 [$:/contacts/img/mailto.svg]]  Mailto {{!!title}}
+ [img width=20 [$:/contacts/img/mailto.svg]]   Mailto {{!!title}}
+
 
 \end
 
@@ -724,7 +767,7 @@ Error message and password prompt
 &lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
 
 
- [img width=0 [$:/contacts/img/phonecall.svg]]   Call {{!!title}}
+ [img width=20 [$:/contacts/img/phonecall.svg]]   Call {{!!title}}
 
 \end</pre>
 </div>
@@ -733,7 +776,7 @@ Error message and password prompt
 &lt;p style=&quot;border:3px solid black; padding-left: 6px; margin-left:8px; margin-right:8px; border-radius:10px; font-size:25px; text-decoration: none;&quot;&gt;
 \end</pre>
 </div>
-<div created="20170124172435700" modified="20170124172954300" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
+<div created="20170124172435700" modified="20170124200920700" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
 <pre>\define mobile()
 &lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
 &lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
@@ -758,6 +801,7 @@ Error message and password prompt
 &lt;/$list&gt;
 \end
 
+
 \define email()
 &lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
 &lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
@@ -766,12 +810,20 @@ Error message and password prompt
 &lt;/$list&gt;
 \end</pre>
 </div>
-<div created="20170124152622800" email="" jabber="" modified="20170124163526400" tags="contact $:/tags/template" title="$:/contacts/Template/NewContact">
-<pre>&lt;&lt;mobilecall&gt;&gt; 
-
+<div created="20170124152622800" email="" jabber="" modified="20170124200831100" tags="contact $:/tags/template" title="$:/contacts/Template/NewContact">
+<pre>!Mobile
+&lt;&lt;mobile&gt;&gt;
+!SMS
 &lt;&lt;sms&gt;&gt;
+!Phone
+&lt;&lt;phone&gt;&gt;
+!E-mail
+&lt;&lt;email&gt;&gt;
 
-&lt;&lt;mailto&gt;&gt;</pre>
+! Other
+
+{{!!jabber}}
+</pre>
 </div>
 <div created="20170124153247000" modified="20170124153346900" tags="$:/tags/PageControls" title="$:/contacts/ui/Buttons/addContact">
 <pre>&lt;$button
@@ -8435,6 +8487,28 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
     }
 }</pre>
 </div>
+<div caption="{{$:/core/images/locked-padlock}} {{$:/language/Buttons/Encryption/Caption}}" created="20170124195426800" description="{{$:/language/Buttons/Encryption/Hint}}" modified="20170124195701000" tags="$:/tags/PageControls $:/tags/TopLeftBar" title="$:/core/ui/Buttons/encryption">
+<pre>&lt;$reveal type=&quot;match&quot; state=&quot;$:/isEncrypted&quot; text=&quot;yes&quot;&gt;
+&lt;$button message=&quot;tm-clear-password&quot; tooltip={{$:/language/Buttons/Encryption/ClearPassword/Hint}} aria-label={{$:/language/Buttons/Encryption/ClearPassword/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+{{$:/core/images/locked-padlock}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/Encryption/ClearPassword/Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/isEncrypted&quot; text=&quot;yes&quot;&gt;
+&lt;$button message=&quot;tm-set-password&quot; tooltip={{$:/language/Buttons/Encryption/SetPassword/Hint}} aria-label={{$:/language/Buttons/Encryption/SetPassword/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+{{$:/core/images/unlocked-padlock}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/Encryption/SetPassword/Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+&lt;/$reveal&gt;</pre>
+</div>
 <div created="20170124152417200" modified="20170124152422000" title="$:/DefaultTiddlers">
 <pre>Contacts
 todo</pre>
@@ -9318,7 +9392,7 @@ table.tablestyle td {
 &lt;/$list&gt;
 &lt;/$button&gt;</pre>
 </div>
-<div button-color="#fff" button-hover-color="#131313" button-size="1.4em" created="20150721080358195" creator="TonGerner" list-after="$:/themes/tiddlywiki/vanilla/base" menus-font-size="0.9em" menus-scroll-height="400px" modified="20170124191513900" modifier="TonGerner" tags="$:/tags/Stylesheet" title="$:/plugins/tongerner/toolbar/styles" toolbar-button-spacing="5px" toolbar-left="40px" toolbar-top="0px">
+<div button-color="#fff" button-hover-color="#131313" button-size="1.4em" created="20150721080358195" creator="TonGerner" list-after="$:/themes/tiddlywiki/vanilla/base" menus-font-size="0.9em" menus-scroll-height="400px" modified="20170124204341000" modifier="TonGerner" tags="$:/tags/Stylesheet" title="$:/plugins/tongerner/toolbar/styles" toolbar-button-spacing="15px" toolbar-left="40px" toolbar-top="0px">
 <pre>&lt;pre&gt;/* TOOLBAR */
 .tc-topbar-left {
      font-size: {{!!button-size}};
@@ -9441,41 +9515,44 @@ html .tc-tiddler-controls button {
 <div created="20170124190441900" modified="20170124190441900" title="$:/state/plugin-info--896887961-$:/plugins/tongerner/toolbar">
 <pre>yes</pre>
 </div>
-<div created="20170124153928000" modified="20170124183134000" title="$:/state/showeditpreview">
+<div created="20170124153928000" modified="20170124201912600" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170124180327900" modified="20170124193152600" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20170124180327900" modified="20170124194851200" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20170124181402200" modified="20170124181411500" title="$:/state/tab--1498284803">
+<div created="20170124181402200" modified="20170124200057100" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div created="20170124153853900" modified="20170124191344600" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+<div created="20170124153853900" modified="20170124204303300" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+</div>
+<div created="20170124204256400" modified="20170124204256400" title="$:/state/tab--2016259090">
+<pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
 <div created="20170124191111400" modified="20170124191112400" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20170124152428800" modified="20170124192444900" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20170124152428800" modified="20170124204315400" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170124192630200" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20170124170956000" modified="20170124203403300" title="$:/state/tab/sidebar--1835078512">
+<pre>tableofcontents</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
 </div>
-<div created="20170124190210900" modified="20170124191346800" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<div created="20170124190210900" modified="20170124204249900" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
 </div>
-<div list="[[Draft of '$:/contacts/Template/NewContact 1']] $:/AdvancedSearch $:/contacts/macro/connect" title="$:/StoryList">
+<div list="Contacts todo" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20170124171937300" modified="20170124193206200" title="$:/temp/advancedsearch">
-<pre>connec</pre>
+<div created="20170124171937300" modified="20170124204110900" title="$:/temp/advancedsearch">
+<pre>az</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9506,7 +9583,7 @@ html .tc-tiddler-controls button {
 <div created="20170124163411300" modified="20170124163755800" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170124183248700" title="$:/temp/search">
+<div created="20170124171931100" modified="20170124204401700" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -9624,7 +9701,7 @@ html .tc-tiddler-controls button {
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170124153416900" modified="20170124183304400" tags="" title="Contacts">
+<div created="20170124153416900" modified="20170124202943900" tags="" title="Contacts">
 <pre>&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
 &lt;div class=&quot;tc-search&quot;&gt;
 &lt;$edit-text tiddler=&quot;$:/temp/search&quot; type=&quot;search&quot; tag=&quot;input&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-popup-handle&quot;/&gt;
@@ -9653,39 +9730,11 @@ html .tc-tiddler-controls button {
 &lt;/$reveal&gt;
 &lt;/$set&gt;
 
+
+
 !A
 ---
-&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[a]]&quot;&gt;
-&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
-
-&lt;$vars phonen=&lt;&lt;currentTiddler&gt;&gt;&gt;
-
-&lt;&lt;phonecall&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-&lt;hr&gt;
-&lt;/$list&gt;
-
-!B
----
-!C
----
-!D
----
-!E
----
-!F
----
-!G
----
-!H
----
-!I
----
-!J
----
-&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[J]] [prefix[j]] &quot;&gt;
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[A]] [prefix[a]] -[prefix[$:/]] &quot;&gt;
 &lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
 &lt;h2&gt;Mobile&lt;/h2&gt;
 &lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
@@ -9713,6 +9762,28 @@ html .tc-tiddler-controls button {
 
 &lt;/$list&gt;
 
+
+!B
+---
+
+!C
+---
+!D
+---
+!E
+---
+!F
+---
+!G
+---
+!H
+---
+!I
+---
+!J
+---
+
+&lt;&lt;letter j J&gt;&gt;
 
 !K
 ---
@@ -9746,15 +9817,8 @@ html .tc-tiddler-controls button {
 ---
 !Z</pre>
 </div>
-<div created="20170124175935000" modified="20170124180214000" tags="" title="ContactTable">
+<div created="20170124175935000" modified="20170124203345900" tags="menu" title="ContactTable">
 <pre>&lt;&lt;RowTable '[tag[contact]] -[prefix[$:/]]' '[tag[Column Data]]'&gt;&gt;</pre>
-</div>
-<div created="20170124192720100" draft.of="$:/contacts/Template/NewContact 1" draft.title="$:/contacts/Template/NewContact 1" email="" jabber="" modified="20170124193123600" tags="contact $:/tags/template" title="Draft of '$:/contacts/Template/NewContact 1'">
-<pre>&lt;&lt;mobilecall&gt;&gt; 
-
-&lt;&lt;sms&gt;&gt;
-
-&lt;&lt;mailto&gt;&gt;</pre>
 </div>
 <div created="20170124183126600" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20170124183226800" tags="" title="Draft of 'New Tiddler 1'">
 <pre>&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
@@ -9788,7 +9852,7 @@ html .tc-tiddler-controls button {
 <div created="20170124152144900" draft.of="New Tiddler" draft.title="Contacts" modified="20170124152148600" tags="" title="Draft of 'New Tiddler'">
 <pre></pre>
 </div>
-<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170124192859000" phonenumber="23664780978" tags="contact" title="Jack">
+<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170124200935200" phonenumber="23664780978" tags="contact" title="Jack">
 <pre>!Mobile
 &lt;&lt;mobile&gt;&gt;
 !SMS
@@ -9796,7 +9860,9 @@ html .tc-tiddler-controls button {
 !PHONE
 &lt;&lt;phone&gt;&gt;
 !EMAIL
-&lt;&lt;email&gt;&gt;</pre>
+&lt;&lt;email&gt;&gt;
+
+</pre>
 </div>
 <div created="20170124162718600" modified="20170124172418600" tags="" title="licenses">
 <pre>The following images are licensed with [[Creative Common 3.0 BY|http://creativecommons.org/licenses/by/3.0/]] from [[Simpleicon|http://www.flaticon.com/authors/simpleicon]]
@@ -9812,6 +9878,36 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 !!tiddlywiki
 
 * Tiddlywiki is licensed... that's a good question, [[check the website|tiddlywiki.com]]
+
+</pre>
+</div>
+<div created="20170124203842700" modified="20170124204230100" tags="menu" title="structure">
+<pre>that's still all a work in progress.
+
+Project started &lt;&lt;now&gt;&gt;
+
+all the macros I use are utterly simple, just providing me (and you) a easier way to change order and fiddle.
+I've probably overdone encapsulating one inside the other though, so here is what's here
+
+! plugin
+
+*[[GenTags plugin|http://ooktech.com/jed/ExampleWikis/GenericTagFields/]] by Jed Carty
+
+! other stuff
+!! macros
+*[[$:/contacts/macro/connect]] has the 4 macros to create mobile call, phone call, mailto and send sms
+*[[$:/contacts/macro/connectstyle]] should keep the style from connect, but desn't work atm
+*[[$:/contacts/macro/contactpage]] has the macro to insert the contact macro inside the user page, passing the variables
+*[[$:/contacts/Template/NewContact]] is the template for new contacts
+* [[$:/contacts/ui/Buttons/addContact]] holds the button to trigger the creation based on the template. It is tagged with `$:/tags/PageControls` to appear in the right bar
+*[[$:/contacts/macro/AZorder]] should keep the code for the alphabetical listing. Can't pass the variables.
+
+
+! buttons
+
+There are three main action button: mobilecall, phonecall e mailto.
+each one is done with image and macro
+
 
 </pre>
 </div>
@@ -10253,13 +10349,26 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div created="20170124175559400" modified="20170124180446100" tags="" title="todo">
-<pre>* call the style macro from within the connect macro, so i only have to edit one style for all
-*check the style and see if it fits your phone
+<div caption="Menu" created="20170124203041600" modified="20170124203401500" tags="$:/tags/SideBar" title="tableofcontents">
+<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'TOC'&gt;&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+&lt;&lt;toc &quot;menu&quot;&gt;&gt;
+&lt;/div&gt;</pre>
+</div>
+<div created="20170124175559400" modified="20170124203738600" tags="menu" title="todo">
+<pre>* call the [[style macro|$:/contacts/macro/connectstyle]] from within the [[connect macro|$:/contacts/macro/connect]], so i only have to edit one style for all
+** without breaking everything
+* how can I push cariables into [[$:/contacts/macro/AZorder]], so that in [[Contacts]] I don't need to copy and paste everything?
+*check the style and see if it fits your phone (looks like)
 * adjust sidebar and make it hidden in phone by default
-* make the table with the variables
-* upload on github
-*finish contact template
+
+
+
 </pre>
 </div>
 
