@@ -9524,8 +9524,8 @@ html .tc-tiddler-controls button {
 <div created="20170124190441900" modified="20170124190441900" title="$:/state/plugin-info--896887961-$:/plugins/tongerner/toolbar">
 <pre>yes</pre>
 </div>
-<div created="20170124153928000" modified="20170124210426700" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20170124153928000" modified="20170124212634900" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20170124180327900" modified="20170124194851200" title="$:/state/sidebar">
 <pre>yes</pre>
@@ -9725,9 +9725,8 @@ html .tc-tiddler-controls button {
 {{!!jabber}}
 </pre>
 </div>
-<div created="20170124153416900" modified="20170124211241100" tags="" title="Contacts">
-<pre>
-```
+<div created="20170124153416900" modified="20170124212654100" tags="" title="Contacts">
+<pre>```
 Click on a name to see the full contact informations.
 
 Right now only the letter A and J are indexed for a difficulty of mine with the macro. check the [[todo]] if you feel like helping!
@@ -9788,6 +9787,13 @@ Right now only the letter A and J are indexed for a difficulty of mine with the 
 &lt;/$vars&gt;
 &lt;/$list&gt;
 
+&lt;h2&gt;SMS&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
+&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;sendsms&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
 &lt;h2&gt;Phone&lt;/h2&gt;
 &lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
 &lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
@@ -9838,6 +9844,13 @@ Right now only the letter A and J are indexed for a difficulty of mine with the 
 &lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
 
 &lt;&lt;mobilecall&gt;&gt;
+&lt;/$vars&gt;
+&lt;/$list&gt;
+
+&lt;h2&gt;SMS&lt;/h2&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
+&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;&lt;sendsms&gt;&gt;
 &lt;/$vars&gt;
 &lt;/$list&gt;
 
