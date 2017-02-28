@@ -119,6 +119,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/.tb/ui/AdvancedSearch/Field</li>
+
 <li>$:/config/DefaultSidebarTab</li>
 
 <li>$:/config/EditorToolbarButtons/Visibility/$:/core/ui/EditorToolbar/bold</li>
@@ -219,6 +221,8 @@ Error message and password prompt
 
 <li>$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/unfold-all-button</li>
 
+<li>$:/config/TopLeftBarButtons/Visibility/NewContact</li>
+
 <li>$:/contacts/img/mailto.svg</li>
 
 <li>$:/contacts/img/mobilecall.svg</li>
@@ -291,6 +295,8 @@ Error message and password prompt
 
 <li>$:/state/tab--86143343</li>
 
+<li>$:/state/tab--937011655</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-797972321</li>
@@ -304,6 +310,10 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/temp/advancedsearch</li>
+
+<li>$:/temp/edit/Jack/phonenumber</li>
+
+<li>$:/temp/edit/john/phonenumber</li>
 
 <li>$:/temp/info-plugin</li>
 
@@ -327,15 +337,17 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>AddContact</li>
+
 <li>anna karinina</li>
 
 <li>Contacts</li>
 
 <li>ContactTable</li>
 
-<li>Draft of 'New Tiddler 1'</li>
+<li>ControlPanel</li>
 
-<li>Draft of 'New Tiddler'</li>
+<li>group</li>
 
 <li>Jack</li>
 
@@ -343,13 +355,17 @@ Error message and password prompt
 
 <li>licenses</li>
 
+<li>location</li>
+
+<li>NewContact</li>
+
 <li>structure</li>
+
+<li>TabellaContatti</li>
 
 <li>Table Macros</li>
 
 <li>tableofcontents</li>
-
-<li>todo</li>
 
 </ul>
 </p>
@@ -361,6 +377,54 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div bag="default" caption="In Fields" created="20141231095518178" creator="Tobias Beer" list-before="$:/core/ui/AdvancedSearch/Filter" modified="20170228172036336" modifier="Tobias Beer" revision="0" tags="$:/tags/AdvancedSearch" title="$:/.tb/ui/AdvancedSearch/Field" type="text/vnd.tiddlywiki">
+<pre>\define searchInField(field, for, ci)
+&lt;$list filter=&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]limit[1]]&quot;&gt;
+&lt;dt&gt;$field$&lt;/dt&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[!is[shadow]!is[system]tag[contact]regexp:$field$[$for$$ci$]]&quot;&gt;
+&lt;dd&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/dd&gt;
+&lt;/$list&gt;
+\end
+
+&lt;style&gt;.tc-advanced-search-check imput {width:auto !important;}&lt;/style&gt;
+
+
+&lt;div class=&quot;tc-search&quot;&gt;
+&lt;$edit-text tiddler=&quot;$:/temp/advancedsearch&quot; type=&quot;search&quot; tag=&quot;input&quot;/&gt; &lt;$select field=&quot;field&quot; tiddler=&quot;$:/temp/advancedsearch&quot; default=&quot;&quot;&gt;
+&lt;option value=&quot;&quot;&gt;*any&lt;/option&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]fields[]sort[]]  -bag -caption -created -creator -draft.of -draft.title -list-before -modified -modifier -revision -type&quot; variable=&quot;field&quot;&gt;
+&lt;option value=&lt;&lt;field&gt;&gt;&gt;&lt;&lt;field&gt;&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&quot;$:/temp/advancedsearch&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+
+&lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch!!field&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
+&lt;dl&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]fields[]]&quot; variable=&quot;field&quot;&gt;
+
+&lt;$reveal type=nomatch text=text default=&lt;&lt;field&gt;&gt;&gt;
+&lt;$macrocall $name=&quot;searchInField&quot; field=&lt;&lt;field&gt;&gt; for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/&gt;
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+&lt;/dl&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch!!field&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+
+&lt;dl&gt;
+&lt;$macrocall $name=&quot;searchInField&quot; field={{$:/temp/advancedsearch!!field}} for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/&gt;
+&lt;/dl&gt;
+&lt;/$reveal&gt;
+&lt;/$reveal&gt;</pre>
+</div>
 <div created="20170124203254800" modified="20170124203254800" title="$:/config/DefaultSidebarTab">
 <pre>tableofcontents</pre>
 </div>
@@ -509,6 +573,9 @@ Error message and password prompt
 <pre>hide</pre>
 </div>
 <div created="20170124190305300" modified="20170124190305300" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/unfold-all-button">
+<pre>hide</pre>
+</div>
+<div created="20170228182620774" modified="20170228182626963" title="$:/config/TopLeftBarButtons/Visibility/NewContact">
 <pre>hide</pre>
 </div>
 <div created="20170124163149900" modified="20170124163151700" title="$:/contacts/img/mailto.svg" type="image/svg+xml">
@@ -8518,14 +8585,13 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;/$button&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20170124152417200" modified="20170124152422000" title="$:/DefaultTiddlers">
-<pre>Contacts
-todo</pre>
+<div created="20170124152417200" modified="20170228173717497" title="$:/DefaultTiddlers">
+<pre>Contacts</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/tongerner/layout_adjustment]]</pre>
+# [[$:/.tb/ui/AdvancedSearch/Field]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -9524,44 +9590,53 @@ html .tc-tiddler-controls button {
 <div created="20170124190441900" modified="20170124190441900" title="$:/state/plugin-info--896887961-$:/plugins/tongerner/toolbar">
 <pre>yes</pre>
 </div>
-<div created="20170124153928000" modified="20170124212634900" title="$:/state/showeditpreview">
-<pre>no</pre>
-</div>
-<div created="20170124180327900" modified="20170124194851200" title="$:/state/sidebar">
+<div created="20170124153928000" modified="20170228165423711" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170124181402200" modified="20170124200057100" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20170124153853900" modified="20170124204303300" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20170124181402200" modified="20170228175946844" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20170124204256400" modified="20170124204256400" title="$:/state/tab--2016259090">
+<div created="20170124153853900" modified="20170228175915999" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+</div>
+<div created="20170124204256400" modified="20170228175913175" title="$:/state/tab--2016259090">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
 <div created="20170124191111400" modified="20170124191112400" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20170124152428800" modified="20170124204315400" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20170228144315040" modified="20170228173235114" title="$:/state/tab--937011655">
+<pre>TabellaContatti</pre>
+</div>
+<div created="20170124152428800" modified="20170228175809224" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170124210528500" title="$:/state/tab/sidebar--1835078512">
-<pre>tableofcontents</pre>
+<div created="20170124170956000" modified="20170228180058863" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
 </div>
-<div created="20170124190210900" modified="20170124204249900" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<div created="20170124190210900" modified="20170228175857166" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
 </div>
-<div list="Contacts todo" title="$:/StoryList">
+<div list="" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20170124171937300" modified="20170124204110900" title="$:/temp/advancedsearch">
-<pre>az</pre>
+<div case-insensitive="(?i)" created="20170124171937300" modified="20170228181254341" title="$:/temp/advancedsearch">
+<pre>$:/plugins/tongerner/toolbar/images/new-template-tiddler-button</pre>
+</div>
+<div created="20170228172301280" modified="20170228172302609" title="$:/temp/edit/Jack/phonenumber">
+<pre>noedit</pre>
+</div>
+<div created="20170228172304248" modified="20170228172305220" title="$:/temp/edit/john/phonenumber">
+<pre>noedit</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -9577,8 +9652,8 @@ html .tc-tiddler-controls button {
     }
 }</pre>
 </div>
-<div created="20170124165957300" modified="20170124205139200" title="$:/temp/NewTagName/email">
-<pre>anna@koomail.com</pre>
+<div created="20170124165957300" modified="20170227224024109" title="$:/temp/NewTagName/email">
+<pre></pre>
 </div>
 <div created="20170124163340000" modified="20170124205202400" title="$:/temp/NewTagName/group">
 <pre></pre>
@@ -9592,7 +9667,7 @@ html .tc-tiddler-controls button {
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170124205329200" title="$:/temp/search">
+<div created="20170124171931100" modified="20170228180645622" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -9710,6 +9785,23 @@ html .tc-tiddler-controls button {
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
+<div created="20170228180100758" modified="20170228180638448" tags="$:/tags/SideBar" title="AddContact">
+<pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
+&lt;div class=&quot;tc-tiddler-frame&quot;&gt;
+
+!!! &lt;$link to={{$:/temp/Stealth!!newtitle}}&gt;See Contact&lt;/$link&gt;
+
+&lt;$edit tiddler=&quot;$:/temp/Stealth&quot; field=&quot;newtitle&quot; class=&quot;tc-edit-texteditor&quot; default=&quot;ooo&quot; placeholder=&quot;Name&quot;/&gt;
+&lt;br&gt;
+&lt;$edit field=&quot;mobilenumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Mobile&quot;/&gt;
+
+&lt;$edit field=&quot;phoneNumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Phone&quot;/&gt;
+&lt;br&gt;
+&lt;$edit field=&quot;email&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;email&quot;/&gt;
+
+&lt;$edit field=&quot;notes&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
+&lt;/div&gt;</pre>
+</div>
 <div created="20170124205118500" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170124205228800" tags="contact" title="anna karinina">
 <pre>!Mobile
 &lt;&lt;mobile&gt;&gt;
@@ -9725,45 +9817,8 @@ html .tc-tiddler-controls button {
 {{!!jabber}}
 </pre>
 </div>
-<div created="20170124153416900" modified="20170124212654100" tags="" title="Contacts">
-<pre>```
-Click on a name to see the full contact informations.
-
-Right now only the letter A and J are indexed for a difficulty of mine with the macro. check the [[todo]] if you feel like helping!
-```
-
-
-
-&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
-&lt;div class=&quot;tc-search&quot;&gt;
-&lt;$edit-text tiddler=&quot;$:/temp/search&quot; type=&quot;search&quot; tag=&quot;input&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-popup-handle&quot;/&gt;
-&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-
-&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter=&quot;[!is[system]search{$(searchTiddler)$}]&quot;/&gt;&quot;&quot;&quot;&gt;
-{{$:/core/images/down-arrow}} {{$:/language/Search/Matches}}
-&lt;/$set&gt;
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
-&lt;$button to=&quot;$:/AdvancedSearch&quot; tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class=&quot;tc-btn-invisible&quot;&gt;
-{{$:/core/images/advanced-search-button}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-
-&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-
-&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle&quot; state=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
-
-{{$:/core/ui/SearchResults}}
-
-&lt;/$reveal&gt;
-&lt;/$reveal&gt;
-&lt;/$set&gt;
-
-
-
+<div created="20170124153416900" modified="20170228174435457" tags="" title="Contacts">
+<pre>{{$:/.tb/ui/AdvancedSearch/Field}}
 
 
 
@@ -9771,109 +9826,95 @@ Right now only the letter A and J are indexed for a difficulty of mine with the 
 ---
 &lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[A]] [prefix[a]] -[prefix[$:/]] &quot;&gt;
 
-&lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualify &quot;$:/temp/popup&quot;&gt;&gt;&gt;
-
-&lt;h1&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/h1&gt;
-&lt;/$button&gt;
-
-&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;qualify &quot;$:/temp/popup&quot;&gt;&gt; text=&quot;&quot;&gt;
 &lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
-&lt;h2&gt;Mobile&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
 
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-
-&lt;&lt;mobilecall&gt;&gt;
-&lt;/$vars&gt;
 &lt;/$list&gt;
-
-&lt;h2&gt;SMS&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;sendsms&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-
-&lt;h2&gt;Phone&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
-&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;phonecall&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-
-&lt;h2&gt; Email &lt;/h2&gt;
-
-&lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
-&lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;mailto&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-&lt;/$reveal&gt;
-&lt;/$list&gt;
-
 
 !B
 ---
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[B]] [prefix[b]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
+
 
 !C
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[C]] [prefix[c]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
+
 !D
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[D]] [prefix[d]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
 !E
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[E]] [prefix[e]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
+
 !F
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[F]] [prefix[f]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
 !G
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[G]] [prefix[g]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
+
 !H
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[H]] [prefix[h]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
+
 !I
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[I]] [prefix[i]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
 !J
 ---
-
 &lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[J]] [prefix[j]] -[prefix[$:/]] &quot;&gt;
-&lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualify &quot;$:/temp/popup&quot;&gt;&gt;&gt;
-&lt;h1&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/h1&gt;
-&lt;/$button&gt;
-&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;qualify &quot;$:/temp/popup&quot;&gt;&gt; text=&quot;&quot;&gt;
+
 &lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
-&lt;h2&gt;Mobile&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
 
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-
-&lt;&lt;mobilecall&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-
-&lt;h2&gt;SMS&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;sendsms&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-
-&lt;h2&gt;Phone&lt;/h2&gt;
-&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
-&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;phonecall&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-
-&lt;h2&gt; Email &lt;/h2&gt;
-
-&lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
-&lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;mailto&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-&lt;/$reveal&gt;
-&lt;br&gt;
 &lt;/$list&gt;
 
 !K
 ---
+
+&lt;$list filter=&quot;[tag[contact]] +[sort[title]] -[prefix[$:/]] +[prefix[K]] [prefix[k]] -[prefix[$:/]] &quot;&gt;
+
+&lt;h1&gt;&lt;$link&gt; &lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+
+&lt;/$list&gt;
 !L
 ---
 !M
@@ -9907,36 +9948,10 @@ Right now only the letter A and J are indexed for a difficulty of mine with the 
 <div created="20170124175935000" modified="20170124203345900" tags="menu" title="ContactTable">
 <pre>&lt;&lt;RowTable '[tag[contact]] -[prefix[$:/]]' '[tag[Column Data]]'&gt;&gt;</pre>
 </div>
-<div created="20170124183126600" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20170124183226800" tags="" title="Draft of 'New Tiddler 1'">
-<pre>&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
-&lt;div class=&quot;tc-search&quot;&gt;
-&lt;$edit-text tiddler=&quot;$:/temp/search&quot; type=&quot;search&quot; tag=&quot;input&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-popup-handle&quot;/&gt;
-&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-
-&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-btn-invisible&quot;&gt;
-&lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter=&quot;[!is[system]search{$(searchTiddler)$}]&quot;/&gt;&quot;&quot;&quot;&gt;
-{{$:/core/images/down-arrow}} {{$:/language/Search/Matches}}
-&lt;/$set&gt;
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
-&lt;$button to=&quot;$:/AdvancedSearch&quot; tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class=&quot;tc-btn-invisible&quot;&gt;
-{{$:/core/images/advanced-search-button}}
-&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;/div&gt;
-
-&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
-
-&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle&quot; state=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
-
-{{$:/core/ui/SearchResults}}
-
-&lt;/$reveal&gt;
-&lt;/$reveal&gt;
-&lt;/$set&gt;</pre>
+<div created="20170227224010914" modified="20170228174022557" tags="menu" title="ControlPanel">
+<pre>&lt;&lt;tabs &quot;ContactTable location groups&quot;&gt;&gt;</pre>
 </div>
-<div created="20170124152144900" draft.of="New Tiddler" draft.title="Contacts" modified="20170124152148600" tags="" title="Draft of 'New Tiddler'">
+<div created="20170228174513549" modified="20170228174534768" tags="" title="group">
 <pre></pre>
 </div>
 <div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170124200935200" phonenumber="23664780978" tags="contact" title="Jack">
@@ -9985,6 +10000,25 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 
 </pre>
 </div>
+<div created="20170228143420285" modified="20170228144237459" tags="" title="location">
+<pre>!Location
+&lt;h2&gt;
+&lt;$set name=TheField value=location&gt;
+&lt;$list filter=&quot;[tags:location[]] +[sort[title]]&quot;&gt;
+{{||$:/plugins/inmysocks/GenericTagFields/LikeTagPills}}
+&lt;/$list&gt;
+&lt;/$set&gt;
+
+
+</pre>
+</div>
+<div caption="NewContact" created="20170228181033982" modified="20170228182607988" tags="$:/tags/TopBar $:/tags/TopLeftBar" title="NewContact">
+<pre>&lt;$link to=AddContact&gt;
+
+{{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
+
+&lt;/$link&gt;</pre>
+</div>
 <div created="20170124203842700" modified="20170124204230100" tags="menu" title="structure">
 <pre>that's still all a work in progress.
 
@@ -10014,6 +10048,9 @@ each one is done with image and macro
 
 
 </pre>
+</div>
+<div caption="contatti" created="20170228142809637" modified="20170228143417030" tags="" title="TabellaContatti">
+<pre>&lt;&lt;RowTable '[tag[contact]] +[sort[title]] -[prefix[$:/]]  -[prefix[$:/]]' ''&gt;&gt;</pre>
 </div>
 <div created="20150319034848355" modified="20151026094051616" tags="$:/tags/Macro" title="Table Macros">
 <pre>\define TableWizardDisplayTableDummyMacro()
@@ -10453,7 +10490,7 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div caption="Menu" created="20170124203041600" modified="20170124203401500" tags="$:/tags/SideBar" title="tableofcontents">
+<div caption="Menu" created="20170124203041600" modified="20170228180619032" tags="$:/tags/SideBar" title="tableofcontents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'TOC'&gt;&gt;
@@ -10463,18 +10500,6 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc &quot;menu&quot;&gt;&gt;
 &lt;/div&gt;</pre>
-</div>
-<div created="20170124175559400" modified="20170124205305100" tags="menu" title="todo">
-<pre>* call the [[style macro|$:/contacts/macro/connectstyle]] from within the [[connect macro|$:/contacts/macro/connect]], so i only have to edit one style for all
-** without breaking everything
-* how can I push cariables into [[$:/contacts/macro/AZorder]], so that in [[Contacts]] I don't need to copy and paste everything?
-*check the style and see if it fits your phone (looks like)
-* adjust sidebar and make it hidden in phone by default
-*remove tag suggestion
-
-
-
-</pre>
 </div>
 
 </div>
