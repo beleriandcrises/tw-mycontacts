@@ -221,8 +221,6 @@ Error message and password prompt
 
 <li>$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/unfold-all-button</li>
 
-<li>$:/config/TopLeftBarButtons/Visibility/NewContact</li>
-
 <li>$:/contacts/img/mailto.svg</li>
 
 <li>$:/contacts/img/mobilecall.svg</li>
@@ -254,8 +252,6 @@ Error message and password prompt
 <li>$:/isEncrypted</li>
 
 <li>$:/plugins/inmysocks/GenTags</li>
-
-<li>$:/plugins/telmiger/listreveal</li>
 
 <li>$:/plugins/tongerner/layout_adjustment</li>
 
@@ -311,8 +307,6 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
-<li>$:/temp/{{</li>
-
 <li>$:/temp/advancedsearch</li>
 
 <li>$:/temp/edit/Jack/phonenumber</li>
@@ -320,8 +314,6 @@ Error message and password prompt
 <li>$:/temp/edit/john/phonenumber</li>
 
 <li>$:/temp/info-plugin</li>
-
-<li>$:/temp/NewTagName</li>
 
 <li>$:/temp/NewTagName/email</li>
 
@@ -337,21 +329,11 @@ Error message and password prompt
 
 <li>$:/temp/Settings/AlternateTagFields</li>
 
-<li>$:/temp/Stealth</li>
-
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
-
-<li>Abej</li>
-
-<li>AddContact</li>
-
-<li>Alessandro Falcione</li>
-
-<li>Alì Ghost</li>
 
 <li>anna karinina</li>
 
@@ -359,21 +341,17 @@ Error message and password prompt
 
 <li>ContactTable</li>
 
-<li>contattiprova</li>
-
 <li>ControlPanel</li>
 
-<li>Draft of '$:/contacts/macro/connect'</li>
-
-<li>Draft of '$:/contacts/macro/contactpage'</li>
-
-<li>Draft of 'Jack'</li>
+<li>Draft of 'New Tiddler 1'</li>
 
 <li>Draft of 'New Tiddler 2'</li>
 
+<li>Draft of 'New Tiddler 3'</li>
+
 <li>Draft of 'New Tiddler'</li>
 
-<li>group</li>
+<li>groups</li>
 
 <li>Jack</li>
 
@@ -383,12 +361,6 @@ Error message and password prompt
 
 <li>location</li>
 
-<li>New Tiddler</li>
-
-<li>New Tiddler 1</li>
-
-<li>NewContact</li>
-
 <li>structure</li>
 
 <li>TabellaContatti</li>
@@ -396,6 +368,8 @@ Error message and password prompt
 <li>Table Macros</li>
 
 <li>tableofcontents</li>
+
+<li>todo</li>
 
 </ul>
 </p>
@@ -603,9 +577,6 @@ Error message and password prompt
 <pre>hide</pre>
 </div>
 <div created="20170124190305300" modified="20170124190305300" title="$:/config/TopLeftBarButtons/Visibility/$:/plugins/tongerner/toolbar/unfold-all-button">
-<pre>hide</pre>
-</div>
-<div created="20170228182620774" modified="20170228182626963" title="$:/config/TopLeftBarButtons/Visibility/NewContact">
 <pre>hide</pre>
 </div>
 <div created="20170124163149900" modified="20170124163151700" title="$:/contacts/img/mailto.svg" type="image/svg+xml">
@@ -8615,13 +8586,14 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;/$button&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div created="20170124152417200" modified="20170228173717497" title="$:/DefaultTiddlers">
-<pre>Contacts</pre>
+<div created="20170124152417200" modified="20170124152422000" title="$:/DefaultTiddlers">
+<pre>Contacts
+todo</pre>
 </div>
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/telmiger/listreveal]]</pre>
+# [[$:/.tb/ui/AdvancedSearch/Field]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -8667,193 +8639,6 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
             &quot;title&quot;: &quot;$:/core/modules/filters/tags.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/tags.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator returning all the tags of the selected tiddlers\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.tags = function(source,operator,options) {\n\tvar tags = {};\n\tvar otherArray = {};\n\tvar field = (operator.suffix) ? operator.suffix:'tags';\n\tsource(function(tiddler,title) {\n\t\tvar t, length;\n\t\tif (field === 'tags') {\n\t\t\tif(tiddler &amp;&amp; tiddler.fields.tags) {\n\t\t\t\tfor(t=0, length=tiddler.fields.tags.length; t&lt;length; t++) {\n\t\t\t\t\ttags[tiddler.fields.tags[t]] = true;\n\t\t\t\t}\n\t\t\t}\n\t\t} else {\n\t\t\tif (tiddler &amp;&amp; tiddler.fields[operator.suffix]) {\n\t\t\t\totherArray = $tw.utils.parseStringArray(tiddler.fields[operator.suffix]);\n\t\t\t\tfor (t=0, length=otherArray.length; t&lt;length; t++) {\n\t\t\t\t\ttags[otherArray[t]] = true;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t});\n\n\treturn Object.keys(tags);\n};\n\n})();\n&quot;
-        }
-    }
-}</pre>
-</div>
-<div author="Thomas Elmiger" core-version="5.1.13" created="20160918233630962" description="Listreveal" list="readme" modified="20170224225859821" name="Listreveal" plugin-type="plugin" source="http://tid.li/tw5/plugins.html" title="$:/plugins/telmiger/listreveal" type="application/json" version="0.1.13">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/plugins/telmiger/lib/language&quot;: {
-            &quot;text&quot;: &quot;$:/plugins/telmiger/lib/languages/en-GB&quot;,
-            &quot;created&quot;: &quot;20160820133735127&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20160917153239827&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;priority&quot;: &quot;2&quot;,
-            &quot;tags&quot;: &quot;ToDoDone ToDoComponents&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/language&quot;,
-            &quot;todo-deadline&quot;: &quot;&quot;,
-            &quot;todo-done&quot;: &quot;20160820234641 20160821004547&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/languages/en-GB&quot;: {
-            &quot;text&quot;: &quot;ID:English\ndate-created-tmpl: {{$:/language/Tiddler/DateFormat}}\ndate-created-tmpl-info: DDth MMM YYYY at hh12:0mmpm\ndate-deadline-tmpl: YYYY-0MM-0DD\n&lt;!-- strings: strigs start here --&gt;\nAdd-tag: Add tag\nAdd-tags-from-the-list: Add tags from the list\nall: all\nall-projects: all projects\nAre-you-sure?: Are you sure?\nchange-priority: set priority to\nClick-to-edit-title: Click the title to edit!\nclose: Close\ndays-back: days back\nDetails: Show details\nDo-it-again: Do it again\nDo-now: Do now\nDone: Done\nEdit: Edit\nHide-list: Hide list\nlate: late\nManage-tags: Manage tags\nMove-down: Move down\nMove-up: Move up\nNew-ToDo-Item: New ToDo Item\nno.: no.\nPrint-window-hint: Open in new window to print\nProject: Project\nRecycle: Recycle\nRemove-tags?: Remove tags?\nReset: Reset\nsearch: search …\nSend-it-down: Send it down\nSet-deadline: Set deadline\nShow-list: Show list\nSort-by-deadline: Sort by deadline\nSort-by-modification: Sort by last modification\nSort-by-priority: Sort all by priority\nSort-by-title: Sort all by title\nsorted-by-deadline: sorted by deadline\nsorted-by-modification: sorted by last modification\nsorted-by-priority: sorted by priority\nsorted-by-title: sorted by title\nSwitch-to-edit-mode: Switch to edit mode\nSwitch-to-safe-mode: Switch to save mode\nTake-it-up: Take it up!\nThis-is-done: This is done\ntoday: today\nToDo: ToDo\nToDo-template-title: ToDo Item\nToDo-template-text: Motivation: Description * Tests/Acceptance criteria\nUuups: Uuups!\n&lt;!-- comments: comments --&gt;\n&lt;!-- translation requires: $:/plugins/telmiger/lib/telang  --&gt;\n&lt;!-- use translated term: &lt;&lt;telang term&gt;&gt; --&gt;&quot;,
-            &quot;type&quot;: &quot;application/x-tiddler-dictionary&quot;,
-            &quot;todo-done&quot;: &quot;20160821121501&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/languages/en-GB&quot;,
-            &quot;tags&quot;: &quot;Translation ToDoDone ToDoComponents&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170204151632889&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;created&quot;: &quot;20160820190056478&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/telang&quot;: {
-            &quot;text&quot;: &quot;\\define telang(term)\n&lt;$transclude tiddler={{$:/plugins/telmiger/lib/language}} index=\&quot;$term$\&quot;&gt;&lt;$transclude tiddler=\&quot;$:/plugins/telmiger/lib/languages/en-GB\&quot; index=\&quot;$term$\&quot;/&gt;&lt;/$transclude&gt;\n\\end\n&quot;,
-            &quot;created&quot;: &quot;20160917153627850&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20160917160018287&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;priority&quot;: &quot;2&quot;,
-            &quot;tags&quot;: &quot;ToDoDone ToDoComponents $:/tags/Macro&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/telang&quot;,
-            &quot;todo-deadline&quot;: &quot;&quot;,
-            &quot;todo-done&quot;: &quot;20160820234641 20160821004547&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/telements/buttons&quot;: {
-            &quot;created&quot;: &quot;20160816192735231&quot;,
-            &quot;text&quot;: &quot;\\define teBtnHint(btntext,message,tooltip,tip,class:\&quot;\&quot;)\n&lt;$set name=\&quot;btnclass\&quot; value=\&quot;te-hint $class$\&quot;&gt;\n&lt;$button class=&lt;&lt;btnclass&gt;&gt; tooltip=\&quot;\&quot;\&quot;$tooltip$\&quot;\&quot;\&quot; message=\&quot;$message$\&quot;&gt;\n$btntext$\n&lt;span class=\&quot;te-tip\&quot;&gt;$tip$&lt;/span&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n\\end\n\n\\define teBtnTagListops(btntext,add-remove,tooltip,tip,class:\&quot;\&quot;)\n&lt;$set name=\&quot;btnclass\&quot; value=\&quot;te-btn-action te-tag-listops $class$\&quot;&gt;\n&lt;$button class=&lt;&lt;btnclass&gt;&gt; tooltip=\&quot;\&quot;\&quot;$tooltip$\&quot;\&quot;\&quot;&gt;\n&lt;$action-listops $tags=\&quot;$add-remove$\&quot; /&gt;\n$btntext$\n&lt;span class=\&quot;te-tip\&quot;&gt;$tip$&lt;/span&gt;\n&lt;/$button&gt;\n&lt;/$set&gt;\n\\end\n\n\\define teBtnEdit(sendmessage:\&quot;tm-edit-tiddler\&quot;,class:\&quot;\&quot;)\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Edit&gt;&gt;&gt;\n   &lt;$button tooltip=&lt;&lt;tt&gt;&gt; class=\&quot;te-btn-action te-edit $class$\&quot;&gt;\n&lt;$action-sendmessage $message=\&quot;$sendmessage$\&quot; $param=&lt;&lt;currentTiddler&gt;&gt; /&gt;\n{{$:/core/images/edit-button}}\n&lt;/$button&gt;\n&lt;/$wikify&gt;\n\\end\n\n\\define teBtnEditShowModified(sendmessage:\&quot;tm-edit-tiddler\&quot;,class:\&quot;\&quot;)\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Edit&gt;&gt;&gt;\n   &lt;$button tooltip=&lt;&lt;tt&gt;&gt; class=\&quot;te-btn-action te-edit $class$\&quot;&gt;\n&lt;$action-sendmessage $message=\&quot;$sendmessage$\&quot; $param=&lt;&lt;currentTiddler&gt;&gt; /&gt;\n{{$:/core/images/edit-button}}&lt;span class=\&quot;te-tip\&quot;&gt;&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; field=\&quot;modified\&quot; format=\&quot;date\&quot; template=\&quot;YYYY-0MM-0DD 0hh:0mm\&quot;/&gt;&lt;/span&gt;\n&lt;/$button&gt;\n&lt;/$wikify&gt;\n\\end\n\n\\define teBtnPrio(btntext,priority,prioritylist:\&quot;$:/plugins/telmiger/listreveal/telements/buttons\&quot;,tooltip,class:\&quot;\&quot;)\n&lt;$set name=\&quot;nextprio\&quot; filter=\&quot;\&quot;\&quot;[list[$prioritylist$]nth[$priority$]]\&quot;\&quot;\&quot;&gt;\n&lt;$wikify name=\&quot;next\&quot; text=\&quot;$tooltip$ &lt;&lt;nextprio&gt;&gt;\&quot;&gt;\n&lt;$button tooltip=&lt;&lt;next&gt;&gt; class=\&quot;te-btn-action te-prio prio$priority$ $class$\&quot;&gt;\n&lt;$action-listops $field=\&quot;priority\&quot; $filter=&lt;&lt;nextprio&gt;&gt;/&gt;\n$btntext$&lt;span class=\&quot;te-prionr\&quot;&gt;$priority$&lt;/span&gt;\n&lt;/$button&gt;\n&lt;/$wikify&gt;\n&lt;/$set&gt;\n\\end\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/telements/buttons&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro MyMacros Listreveal&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170224230609487&quot;,
-            &quot;list&quot;: &quot;3 1 2&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;prio&quot;: &quot;&quot;
-        },
-        &quot;01 Listreveal List Setup&quot;: {
-            &quot;created&quot;: &quot;20170222232934553&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;Explanations for the code of $:/plugins/telmiger/listreveal/readme – you can clone the linked tiddler and adapt it step by step to create your own listreveal project. The filter statement is a good point to start:\n\n```\n&lt;$set name=\&quot;listfilter\&quot; \n   value=\&quot;\&quot;\&quot;[tag[Listreveal]!is[system]sort[title]]\&quot;\&quot;\&quot;&gt;\n&lt;ul class=\&quot;te-list\&quot;&gt;\n&lt;$list filter=&lt;&lt;listfilter&gt;&gt;&gt;\n```\nAlways use a variable called //listfilter// to create your list. The list-based tag manager (see [[03 Context Tagging]]) is depending on this convention.\n\nIt is recommended to use the CSS classes you see in this example – add your own to change the looks.\n\n```\n&lt;$set name=\&quot;tidTitle\&quot; value={{!!title}}&gt;\n   &lt;li class=\&quot;todo-item te-flex-item\&quot;&gt;\n      &lt;span class=\&quot;te-flex-item te-flex-half-full\&quot;&gt;\n         &lt;span class=\&quot;te-flex-item te-flex-content te-flex-left\&quot;&gt;\n   &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n         &lt;/span&gt;\n      &lt;/span&gt;\n```\nThe styling relies on [[CSS3 flexbox|https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties]]. These spans help to make your list as mobile friendly as possible.\n\n```\n      &lt;span class=\&quot;te-flex-item te-flex-half-full\&quot;&gt;\n         &lt;span class=\&quot;te-flex-item te-flex-content te-flex-right\&quot;&gt;\n            &lt;&lt;teBtnEditShowModified&gt;&gt;\n```\nThis macro produces an edit button. It shows the tiddler’s modified date when the mouse hovers over it.\n\n```\n&lt;$wikify name=\&quot;cl\&quot; text=&lt;&lt;telang close&gt;&gt; &gt;\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Details&gt;&gt; &gt;\n   &lt;$macrocall $name=\&quot;listrevealButton\&quot; title=&lt;&lt;tidTitle&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; close=&lt;&lt;cl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n```\nThis macrocall produces the button on the right side that opens and closes the tiddlers.\n\nThe variables //cl// and //tt// get predefined translations from the language tiddlers that are part of this plugin. You can replace the tooltip for opening (attribute //tooltip//) and closing (attribute //close//) with your own texts.\n\n```\n         &lt;/span&gt;\n      &lt;/span&gt;\n&lt;$wikify name=\&quot;tpl\&quot; text=&lt;&lt;telang date-created-tmpl&gt;&gt; &gt;\n   &lt;$macrocall $name=\&quot;listrevealContent\&quot; title=&lt;&lt;tidTitle&gt;&gt; datetime=&lt;&lt;tpl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n```\nThis macrocall produces the text content and some details of your tiddler.\n\nAgain the variable //tpl// gets a predefined translation from the integrated language tiddlers. It is used as a [[date format template|http://tiddlywiki.com/#DateFormat]] when the created and modified timestamps of the tiddler are displayed. This attribute is optional.\n\n//tidTitle// is the variable for the title of your list elements (your tiddlers). It is set at the beginning (see second snippet).\n\n```\n   &lt;/li&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$set&gt;\n```\nThe whole list is presented as an unordered HTML list `&lt;ul&gt;` with tiddlers as list items `&lt;li&gt;`.&quot;,
-            &quot;title&quot;: &quot;01 Listreveal List Setup&quot;,
-            &quot;tags&quot;: &quot;Listreveal&quot;,
-            &quot;modified&quot;: &quot;20170224201650800&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;
-        },
-        &quot;02 Edit Button&quot;: {
-            &quot;created&quot;: &quot;20170222233632994&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;Optionally you can add a lock/unlock button to switch your list into edit mode (all listreveal lists in your wiki to be precise). This presents the tiddler content in an editor field where you can change it using wikitext formatting. \n\n```\nUse this button to enable editing: &lt;&lt;listrevealBtnEdit&gt;&gt;\n```\nAdd your own parameter `class:\&quot;your-class\&quot;` for styling and positioning via CSS. The icon has a so called dirty indicator implemented: it turns red if you have unsaved changes.&quot;,
-            &quot;title&quot;: &quot;02 Edit Button&quot;,
-            &quot;tags&quot;: &quot;Listreveal&quot;,
-            &quot;modified&quot;: &quot;20170224192922331&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;
-        },
-        &quot;03 Context Tagging&quot;: {
-            &quot;created&quot;: &quot;20170224195102124&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;When you look inside a tiddler in the list using the ellipsis (…) button on the right, you see the tiddler’s tags, text and timestamps. \n\n{{$:/core/images/tag-button}}\n\nThe tags can be changed using the tag label icon. A unique feature called context tagging or list-based tagging appears in a popup. From there you are able to add suggested tags based on the other tiddlers in your list or remove single tags from the tiddler. &quot;,
-            &quot;title&quot;: &quot;03 Context Tagging&quot;,
-            &quot;tags&quot;: &quot;Listreveal&quot;,
-            &quot;modified&quot;: &quot;20170224195644691&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;
-        },
-        &quot;04 Checklists&quot;: {
-            &quot;created&quot;: &quot;20170224200058192&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;This plugin comes with CSS to support checklists generated via a plugin by Tony Grosinger – indentation and the display of user interface elements to add and delete items should be optimized for use inside of listreveal lists.\n\n[ ] Install the plugin from https://grosinger.net/tw5-checklist/\n[ ] Make your first checklist\n[x] Read these hints on checklists&quot;,
-            &quot;todo-done&quot;: &quot;20160917214708&quot;,
-            &quot;todo-deadline&quot;: &quot;20160912220000000&quot;,
-            &quot;title&quot;: &quot;04 Checklists&quot;,
-            &quot;tags&quot;: &quot;Listreveal Usability Plugins&quot;,
-            &quot;priority&quot;: &quot;2&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170224201034767&quot;
-        },
-        &quot;05 Translations&quot;: {
-            &quot;created&quot;: &quot;20170224202239839&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;Three language tiddlers are shipped with the plugin: \n\n&lt;ul&gt;\n&lt;$list filter=\&quot;\&quot;\&quot;[all[shadows]prefix[$:/plugins/telmiger/lib/languages/]]\&quot;\&quot;\&quot;&gt;\n&lt;li&gt;\n{{##ID}}:  &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nSet your language in $:/plugins/telmiger/lib/language (I hope I will find a way to use the language from the TW settings in the future).\n\nTo implement a new language you could clone and adapt one of them. They are used for other plugins too, this is why they contain way more text than needed for listreveal.\n&quot;,
-            &quot;title&quot;: &quot;05 Translations&quot;,
-            &quot;tags&quot;: &quot;Listreveal Translation&quot;,
-            &quot;modified&quot;: &quot;20170227173511266&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/languages/de-DE&quot;: {
-            &quot;created&quot;: &quot;20160823202222125&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;ID:Deutsch (Deutschland)\ndate-created-tmpl: {{$:/language/Tiddler/DateFormat}}\ndate-created-tmpl-info: DD. MMM YYYY, 0hh:0mm Uhr\ndate-deadline-tmpl: 0DD.0MM.YYYY\n&lt;!-- strings: strings start here --&gt;\nAdd-tag: Tag hinzufügen\nAdd-tags-from-the-list: Tags aus der Liste hinzufügen\nall: alle\nall-projects: alle Projekte\nAre-you-sure?: Bist du sicher?\nchange-priority: Priorität ändern auf\nClick-to-edit-title: Auf Titel klicken zum Bearbeiten!\nclose: Schließen\ndays-back: Tage\nDetails: Details\nDo-it-again: Mach’s nochmal\nDo-now: Jetzt erledigen\nDone: Erledigt\nEdit: bearbeiten\nHide-list: Liste ausblenden\nlate: später\nManage-tags: Tag-Manager\nMove-down: Nach unten\nMove-up: Nach oben\nNew-ToDo-Item: Neue Aufgabe\nno.: Anz.\nPrint-window-hint: In neuem Fenster öffnen zum Drucken\nProject: Projekt:\nRecycle: Nochmals verwenden\nRemove-tags?: Tags entfernen?\nReset: Zurücksetzen\nsearch: Suche\nSend-it-down: doch nicht jetzt\nSet-deadline: Termin festlegen\nShow-list: Liste anzeigen\nSort-by-deadline: Nach Termin sortieren\nSort-by-modification: Nach letzter Änderung sortieren\nSort-by-priority: Alle nach Priorität sortieren\nSort-by-title: Alle nach Titel sortieren\nsorted-by-deadline: sortiert nach Enddatum\nsorted-by-modification: sortiert nach letzter Änderung\nsorted-by-priority: sortiert nach Priorität\nsorted-by-title: sortiert nach Titel\nSwitch-to-edit-mode: Bearbeiten ermöglichen\nSwitch-to-safe-mode: Bearbeiten ausschalten\nTake-it-up: Rauf damit!\nThis-is-done: Das ist erledigt\ntoday: heute\nToDo: ToDo\nToDo-template-title: Neue Aufgabe\nToDo-template-text: Motivation: Beschreibung * Tests/Abnahmekriterien\nUuups: Hoppla!\n&lt;!-- comments: Kommentare --&gt;\n&lt;!-- translation requires: $:/plugins/telmiger/lib/telang  --&gt;\n&lt;!-- use translated term: &lt;&lt;telang term&gt;&gt; --&gt;&quot;,
-            &quot;type&quot;: &quot;application/x-tiddler-dictionary&quot;,
-            &quot;todo-done&quot;: &quot;20160821121525&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/languages/de-DE&quot;,
-            &quot;tags&quot;: &quot;Translation ToDoComponents ToDoDone&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170224202921245&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/languages/de-CH&quot;: {
-            &quot;created&quot;: &quot;20160821100821036&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;ID:Deutsch (Schweiz)\ndate-created-tmpl: {{$:/language/Tiddler/DateFormat}}\ndate-created-tmpl-info: DD. MMM YYYY, 0hh:0mm Uhr\ndate-deadline-tmpl: 0DD.0MM.YYYY\n&lt;!-- strings: strings start here --&gt;\nAdd-tag: Tag hinzufügen\nAdd-tags-from-the-list: Tags aus der Liste hinzufügen\nall-projects: alle Projekte\nAre-you-sure?: Bist du sicher?\nchange-priority: Priorität ändern auf\nClick-to-edit-title: Auf Titel klicken zum Bearbeiten!\nclose: Schliessen\ndays-back: Tage zurück\nDetails: Details\nDo-it-again: Mach’s nochmal\nDo-now: Jetzt erledigen\nDone: Erledigt\nEdit: bearbeiten\nHide-list: Liste ausblenden\nlate: später\nManage-tags: Tag-Manager\nMove-down: Nach unten\nMove-up: Nach oben\nNew-ToDo-Item: Neue Aufgabe\nno.: Anz.\nPrint-window-hint: In neuem Fenster öffnen für Druck\nProject: Projekt:\nRecycle: Nochmals verwenden\nRemove-tags?: Tags entfernen?\nReset: Zurücksetzen\nsearch: Suche …\nSend-it-down: doch nicht jetzt\nSet-deadline: Termin festlegen\nShow-list: Liste anzeigen\nSort-by-deadline: Nach Termin sortieren\nSort-by-modification: Nach letzter Änderung sortieren\nSort-by-priority: Alle nach Priorität sortieren\nSort-by-title: Alle nach Titel sortieren\nsorted-by-deadline: sortiert nach Enddatum\nsorted-by-modification: sortiert nach letzter Änderung\nsorted-by-priority: sortiert nach Priorität\nsorted-by-title: sortiert nach Titel\nSwitch-to-edit-mode: Bearbeiten ermöglichen\nSwitch-to-safe-mode: Bearbeiten ausschalten\nTake-it-up: Rauf damit!\nThis-is-done: Das ist erledigt\ntoday: heute\nToDo: ToDo\nToDo-template-title: ToDo Item\nToDo-template-text: Motivation: Description * Tests/Acceptance criteria\nUuups: Hoppla!\n&lt;!-- comments: Kommentare --&gt;\n&lt;!-- translation requires: $:/plugins/telmiger/lib/telang  --&gt;\n&lt;!-- use translated term: &lt;&lt;telang term&gt;&gt; --&gt;&quot;,
-            &quot;type&quot;: &quot;application/x-tiddler-dictionary&quot;,
-            &quot;todo-done&quot;: &quot;20160821121525&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/languages/de-CH&quot;,
-            &quot;tags&quot;: &quot;Translation ToDoComponents ToDoDone&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170224202841971&quot;
-        },
-        &quot;$:/plugins/telmiger/listreveal/icon&quot;: {
-            &quot;created&quot;: &quot;20170224201850969&quot;,
-            &quot;text&quot;: &quot;&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;64.003\&quot; height=\&quot;64.003\&quot; viewBox=\&quot;-500.5 395.5 64.003 64.003\&quot;&gt;&lt;path d=\&quot;M-468.5 396.5l26.426 15.5v31l-26.425 15.5-26.426-15.5v-31l26.427-15.5z\&quot;/&gt;&lt;path fill=\&quot;#FFF\&quot; d=\&quot;M-485.996 419.088h34.99v16.824h-34.99z\&quot;/&gt;&lt;path fill=\&quot;#E2001A\&quot; d=\&quot;M-468.5 405.5c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22-9.85-22-22-22zm13.11 21.637c-1.022.682-2.674 1.023-4.954 1.023h-2.838c-1.505 0-2.598.3-3.28.9-.68.6-1.22 1.804-1.622 3.615 0 0-.063.526-.178.526s-.13-.31-.184-.562c-.056-.263-.14-.59-.256-.977-.224-.758-.447-1.332-.67-1.72-.27-.482-.613-.87-1.024-1.165-.412-.294-.883-.47-1.413-.528l-.74-.088h-3.637c-2.178 0-3.796-.343-4.855-1.024-1.764-1.12-2.71-3.24-2.842-6.357-.01-.25 0-.48.047-.772h.208c.142 1.41 1.304 2.502 2.158 3.274.853.77 2.222 1.155 4.104 1.155h3.3c1.896 0 3.28.436 4.158 1.306.79.786 1.31 2.017 1.56 3.69.028.183.012.263.064.263.053 0 .04-.09.06-.278.253-2.173 1.094-3.627 2.522-4.363.88-.46 2.28-.676 4.196-.652l2.257.035c1.527.023 2.814-.278 3.86-.908 1.046-.63 2.285-1.803 2.425-3.52h.21c.065.17.057.56.045.828-.13 3.105-1.023 5.206-2.68 6.3z\&quot;/&gt;&lt;/svg&gt;&quot;,
-            &quot;type&quot;: &quot;image/svg+xml&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/listreveal/icon&quot;,
-            &quot;tags&quot;: &quot;&quot;,
-            &quot;modified&quot;: &quot;20170224201914042&quot;
-        },
-        &quot;$:/plugins/telmiger/listreveal/readme&quot;: {
-            &quot;created&quot;: &quot;20170222172249206&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;!! Good to Know\n\nA list of things you should know about this plugin. Click the ellipsis button on the right […] to see more.\n\nUse this button to enable editing: &lt;&lt;listrevealBtnEdit&gt;&gt;\n\n---\n\n&lt;$set name=\&quot;listfilter\&quot; value=\&quot;\&quot;\&quot;[all[shadows]prefix[0]sort[title]]\&quot;\&quot;\&quot;&gt;\n&lt;ul class=\&quot;te-list\&quot;&gt;\n&lt;$list filter=&lt;&lt;listfilter&gt;&gt;&gt;\n&lt;$set name=\&quot;tidTitle\&quot; value={{!!title}}&gt;\n   &lt;li class=\&quot;todo-item te-flex-item\&quot;&gt;\n      &lt;span class=\&quot;te-flex-item te-flex-half-full\&quot;&gt;\n         &lt;span class=\&quot;te-flex-item te-flex-content te-flex-left\&quot;&gt;\n   &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n         &lt;/span&gt;\n      &lt;/span&gt;\n      &lt;span class=\&quot;te-flex-item te-flex-half-full\&quot;&gt;\n         &lt;span class=\&quot;te-flex-item te-flex-content te-flex-right\&quot;&gt;\n            &lt;&lt;teBtnEditShowModified&gt;&gt;\n&lt;$wikify name=\&quot;cl\&quot; text=&lt;&lt;telang close&gt;&gt; &gt;\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Details&gt;&gt; &gt;\n   &lt;$macrocall $name=\&quot;listrevealButton\&quot; title=&lt;&lt;tidTitle&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; close=&lt;&lt;cl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n         &lt;/span&gt;\n      &lt;/span&gt;\n&lt;$wikify name=\&quot;tpl\&quot; text=&lt;&lt;telang date-created-tmpl&gt;&gt; &gt;\n   &lt;$macrocall $name=\&quot;listrevealContent\&quot; title=&lt;&lt;tidTitle&gt;&gt; datetime=&lt;&lt;tpl&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n   &lt;/li&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$set&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/listreveal/readme&quot;,
-            &quot;tags&quot;: &quot;Listreveal&quot;,
-            &quot;modified&quot;: &quot;20170224210736677&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;
-        },
-        &quot;$:/plugins/telmiger/listreveal/tags&quot;: {
-            &quot;created&quot;: &quot;20160915193628399&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;\\define lrTaglist(tiddler:\&quot;_false_\&quot;)\n&lt;div class=\&quot;lr-tag-popup\&quot;&gt;\n&lt;&lt;telang Add-tags-from-the-list&gt;&gt; \n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Add-tag&gt;&gt;&gt;\n&lt;ul class=\&quot;lr-tags-add\&quot;&gt;\n&lt;$list filter=\&quot;[list[$:/temp/lr-tags-$tiddler$!!lr-tagsinlist]sort[]] -[list[$:/temp/lr-tags-$tiddler$!!lr-tagstoremove]]\&quot; variable=\&quot;tag\&quot;&gt;\n&lt;li&gt;\n   &lt;$macrocall $name=\&quot;teBtnTagAddRemove\&quot; btntext=&lt;&lt;tag&gt;&gt; add=&lt;&lt;tag&gt;&gt; tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; tooltip=&lt;&lt;tt&gt;&gt;/&gt; \n&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$wikify&gt;\n&lt;&lt;telang Remove-tags?&gt;&gt; \n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Are-you-sure?&gt;&gt;&gt;\n&lt;ul class=\&quot;lr-tags-remove\&quot;&gt;\n&lt;$list filter=\&quot;[list[$:/temp/lr-tags-$tiddler$!!lr-tagstoremove]sort[]]\&quot; variable=\&quot;tag\&quot;&gt;\n&lt;li&gt;\n   &lt;$macrocall $name=\&quot;teBtnTagAddRemove\&quot; btntext=&lt;&lt;tag&gt;&gt; remove=&lt;&lt;tag&gt;&gt; tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; tooltip=&lt;&lt;tt&gt;&gt;/&gt; \n&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n&lt;/$wikify&gt;\n&lt;/div&gt;\n\\end\n\n\\define teBtnTagAddRemove(btntext,add:\&quot;_false_\&quot;,remove:\&quot;_false_\&quot;,tooltip,class:\&quot;\&quot;,tiddler:\&quot;_false_\&quot;)\n&lt;$vars tip=\&quot;\&quot;\&quot;$tip$\&quot;\&quot;\&quot; tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; btnclass=\&quot;te-popup-action $class$\&quot; add=\&quot;\&quot;\&quot;$add$\&quot;\&quot;\&quot; remove=\&quot;\&quot;\&quot;$remove$\&quot;\&quot;\&quot;&gt;\n&lt;$set name=\&quot;actiontid\&quot; filter=\&quot;[&lt;tiddler&gt;!prefix[_false_]]\&quot; value=&lt;&lt;tiddler&gt;&gt; emptyValue=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;$set name=\&quot;subfilter\&quot; filter=\&quot;[&lt;add&gt;!prefix[_false_]]\&quot; value=\&quot;[[$add$]]\&quot; emptyValue=\&quot;-[[$remove$]]\&quot;&gt;\n&lt;$wikify name=\&quot;at\&quot; text=&lt;&lt;actiontid&gt;&gt;&gt;\n&lt;$button class=&lt;&lt;btnclass&gt;&gt; tooltip=\&quot;\&quot;\&quot;$tooltip$\&quot;\&quot;\&quot;&gt;\n&lt;$action-listops $tiddler=&lt;&lt;at&gt;&gt; $field=\&quot;tags\&quot; $subfilter=&lt;&lt;subfilter&gt;&gt; $timestamp=\&quot;no\&quot;/&gt;\n&lt;$action-setfield $tiddler=\&quot;\&quot;\&quot;$(popstate)$\&quot;\&quot;\&quot; $field=\&quot;text\&quot; $value=\&quot;\&quot;/&gt;\n   &lt;$text text=\&quot;\&quot;\&quot;$btntext$\&quot;\&quot;\&quot;&gt;\n&lt;/$button&gt;\n&lt;/$wikify&gt;\n&lt;/$set&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define lrBtnAddTags(tiddler,class:\&quot;\&quot;)\n&lt;$vars tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; temptags=\&quot;$:/temp/lr-tags-$tiddler$\&quot;&gt;\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Manage-tags&gt;&gt;&gt;\n&lt;$wikify name=\&quot;tagfilter\&quot; text=\&quot;&lt;&lt;listfilter&gt;&gt; +[tags[]sort[]]\&quot;&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/lr-tags-$tiddler$\&quot;&gt;&gt; class=\&quot;\&quot;\&quot;te-btn-action addtag $class$\&quot;\&quot;\&quot; tooltip=&lt;&lt;tt&gt;&gt; &gt;\n&lt;$action-listops $tiddler=&lt;&lt;temptags&gt;&gt; $field=\&quot;lr-tagsinlist\&quot; $filter=&lt;&lt;tagfilter&gt;&gt;/&gt;\n&lt;$action-listops $tiddler=&lt;&lt;temptags&gt;&gt; $field=\&quot;lr-tagstoremove\&quot; $filter=\&quot;[&lt;tiddler&gt;tags[]]\&quot;/&gt;\n&lt;$action-setfield $tiddler=&lt;&lt;temptags&gt;&gt; text=&lt;&lt;lrTaglist \&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot;&gt;&gt;/&gt;\n{{$:/core/images/tag-button}}\n&lt;/$button&gt;\n&lt;/$wikify&gt;\n&lt;/$wikify&gt;\n\\end\n\n\\define lrTagsPopup(tiddler)\n&lt;$set name=\&quot;popstate\&quot; value=&lt;&lt;qualify \&quot;$:/state/popup/lr-tags-$tiddler$\&quot;&gt;&gt;&gt;\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle\&quot; state=&lt;&lt;popstate&gt;&gt; type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot;&gt;\n{{$:/temp/lr-tags-$tiddler$}}\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n\\end\n\n\\define lrBtnTags(class:\&quot;\&quot;)\n&lt;span class=\&quot;lr-flex-wrapper\&quot;&gt;\n&lt;$wikify name=\&quot;tiddler\&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;\n   &lt;$macrocall $name=\&quot;lrBtnAddTags\&quot; tiddler=&lt;&lt;tiddler&gt;&gt; class=\&quot;\&quot;\&quot;$class$\&quot;\&quot;\&quot;/&gt;\n   &lt;$macrocall $name=\&quot;lrTagsPopup\&quot; tiddler=&lt;&lt;tiddler&gt;&gt;/&gt;\n&lt;/$wikify&gt;\n&lt;/span&gt;\n\\end\n\n\\define listreveal-tags()\n&lt;span class=\&quot;listreveal-tags te-flex-item\&quot;&gt;\n&lt;&lt;lrBtnTags muted&gt;&gt;\n&lt;span class=\&quot;te-tags\&quot;&gt;\n&lt;$list filter=\&quot;[all[current]tags[]sort[title]]\&quot; template=\&quot;$:/core/ui/TagTemplate\&quot; storyview=\&quot;pop\&quot;/&gt;\n&lt;/span&gt;\n&lt;/span&gt;\n\\end\n\n&lt;!-- !! Listreveal Tags\n\n* lrTaglist\n** show a popup where tags can be added or removed\n* teBtnTagAddRemove\n** show a button to add/remove a tag from a tiddler – roadmap TASK: modified is set at the moment but should not\n* lrBtnTags\n** lrBtnAddTags: show the button (and save the tags that could be added/removed)\n** lrTagsPopup: reveal or hide the popup\n* listreveal-tags\n** put this in your revealed section to show the button and the existing tags\n\n--&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/listreveal/tags&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro MyMacros ToDoDone ToDoComponents Listreveal&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170222233209234&quot;,
-            &quot;datetime&quot;: &quot;&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/telements.css&quot;: {
-            &quot;created&quot;: &quot;20160816210925818&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;/* library of reusable (t)elements */\n\n/* header */\n\nheader {\n   background-color: &lt;&lt;colour notification-background&gt;&gt;;\n   padding: 10px;\n   margin: 0 0 0 -10px;\n}\n\n/* te-summary as seen in extract macro */\n\n.te-summary {\n   width: 100%;\n   background-color: &lt;&lt;colour code-background&gt;&gt;;\n}\n\n/* flexbox layout */\n\n.te-flex-item {\n   display: flex;\n   flex-direction: row;\n   flex-wrap: wrap;\n   justify-content: space-between;\n   align-items: flex-start;\n   height: auto;\n}\n\n.te-flex-half-full {\n   flex-grow: 1;\n   min-width: 49%;\n}\n\n.te-flex-left {\n   justify-content: flex-start;\n}\n\n.te-flex-right {\n   justify-content: flex-end;\n}\n\n.te-flex-content {\n   width: 100%;\n}\n\n/* lists */\n\n.te-list {\n   list-style: outside none none;\n   margin: 0 0 1em 0;\n   padding: 0;\n   line-height: 2;\n}\n\n.te-list .te-flex-item {\n   border-top: 1px solid rgba(1,1,1,0);\n   border-bottom: 1px solid rgba(1,1,1,0);\n   margin-bottom: -1px;\n}\n\n.te-list .te-flex-item a.tc-tiddlylink-resolves {\n    flex-grow: 3;\n}\n\n\n/* buttons */\n/* big buttons */\n\n.te-btn-big {\n   display: inline-block;\n   position: absolute;\n   right: 42px;\n   height: 29px;\n   min-width: 2.2em;\n   background: none;\n   background-color: &lt;&lt;colour sidebar-tab-background-selected&gt;&gt;;\n   border: 1px solid lightgray;\n   font-size: 0.85em;\n   line-height: 0.5;\n   margin-left: 10px;\n   padding: 3px 6px 1px;\n}\n.te-btn-big:hover {\n   background-color: &lt;&lt;colour sidebar-tab-background&gt;&gt;;\n}\n\n/* standard save button */\n\nspan.te-btn-big button {\n   margin: -2px 0 0 5px;\n}\nspan.te-btn-big button svg {\n   height: 0.9em;\n}\n\n/* color overlay hack */\n\nbutton.te-btn-big.te-create::before {\n   background-color: &lt;&lt;colour download-background&gt;&gt;;\n   content: \&quot;\&quot;;\n   position: absolute;\n   top: 0; \n   left: 0;\n   width: 100%; \n   height: 100%;  \n   opacity: 0.33; \n}\nbutton:hover.te-btn-big.te-create::before {\n   opacity: 0.66; \n}\n\n.te-btn-big.unlocked {\n   background-color: &lt;&lt;colour sidebar-tab-background&gt;&gt;;\n}\n.te-btn-big.unlocked:hover {\n   background-color: &lt;&lt;colour sidebar-tab-background-selected&gt;&gt;;\n}\n.te-btn-big.te-create {\n   background-color: unset;\n}\n.te-btn-big .tc-image-locked-padlock, \n.te-btn-big .tc-image-unlocked-padlock {\n   margin-bottom: 3px;\n}\n.te-btn-big .tc-image-new-button {\n   margin-bottom: 2px;\n   margin-top: 1px;\n}\n.te-btn-big .tc-image-unfold, \n.te-btn-big .tc-image-fold {\n   margin-top: 3px;\n}\n\n\n/* action buttons */\n\n.te-btn-action {\n   background: none;\n   border: none;\n   margin: 0.3em 0.3em 0 0.6em;\n   padding: 0;\n}\n.te-btn-action.muted svg {\n   opacity:0.3;\n}\n.te-btn-action:hover svg {\n   opacity:0.6;\n}\n\n.te-btn-action.addtag svg {\n   height: 1.5em;\n   width: 1.5em;\n}\n\n.te-btn-action.te-edit svg {\n   height: 1.25em;\n   width: 1.25em;\n   margin-bottom: -2px;\n}\n\n.te-btn-action.te-prio {\nbackground-color: #777;\nwidth: 18px;\nheight: 18px;\nmargin-top: 3px;\nborder: 3px solid white;\nbox-sizing: content-box;\nborder-radius: 5px;\n}\n.te-btn-action.te-prio.prio2 {\n   background-color: #999;\n}\n.te-btn-action.te-prio.prio3 {\n   background-color: #bbb;\n}\n.te-btn-action.te-prio.prio4 {\n   background-color: #ddd;\n}\n\n\n/* popup action buttons */\n\n.te-popup-action {\n    background: none;\n    border: none;\n    padding: 0;\n}\n\n/* date picker button */\n\n.te-btn-action.todo-deadline {\n   margin-bottom: -4px;\n   text-align: center;\n}\n.te-btn-action.todo-deadline:hover {\n   cursor: pointer;\n}\n.te-btn-action.todo-deadline span svg {\n   max-height: 1.4em;\n   opacity: 0.66;\n}\n\n\n/* urgent indicators */\n\n.te-btn-action .urgent {\n   position: absolute;\n   font-size: 0.75em;\n   line-height: 1.25;\n   text-align: center;\n   margin-top: -3.35em;\n   margin-left: -2em;\n   padding-left: 0.1em;\n   padding-right: 0.1em;\n}\n.urgent.late {\n   background-color: red;\n   color: white;\n}\n.urgent.today {\n   background-color: yellow;\n   color: red;\n}\n\n\n/* priority buttons */\n\n.te-btn-action.te-prio svg {\n   position: relative;\n   height: 1.65em;\n   width: 1.5em;\n   margin-top: -3px;\n   opacity: 0;\n   z-index: 101;\n}\n.te-btn-action.te-prio.prio1:hover svg {\n   opacity: 0.6;\n}\n.te-btn-action.te-prio.prio2:hover svg {\n   opacity: 0.5;\n}\n.te-btn-action.te-prio:hover svg {\n   opacity: 0.4;\n}\n.te-btn-action .te-prionr {\n   position: relative;\n   top: -1.5em;\n   width: 100%;\n   color: #fefefe;\n   font-size: 1em;\n   font-weight: 600;\n   text-align: center;\n}\n.te-btn-action.te-prio.prio1 .te-prionr, .te-btn-action.te-prio.prio2 .te-prionr,\n.te-btn-action.te-prio.prio3 .te-prionr {\n   color: #eee;\n}\n\n.te-linkbutton {\n   color: &lt;&lt;colour tiddler-link-foreground&gt;&gt;;\n   background-color: transparent;\n   border: 0;\n}\n\n\n/* big buttons positions */\n\n.te-first {\n   margin-right: 2px;\n}\n.te-second {\n   margin-right: 60px;\n}\n.te-third {\n   margin-right: 120px;\n}\n\n\n/* text */\n\n.te-text {\n   margin: 0 0.5em 0 0.5em;\n}\n.te-text.right {\n   margin-left: 1em;\n   margin-right: 0.5em;\n   right: 6em;\n}\n\n\n/* popup tip */\n\n.te-tip {\n   position: absolute;\n   display: none;\n   font-size: 15px;\n   line-height: 1.4;\n   white-space: nowrap;\n   padding: 0 3px 0 3px;\n   border: 1px solid &lt;&lt;colour notification-border&gt;&gt;;\n   border-radius: 3px;\n   background-color: &lt;&lt;colour notification-background&gt;&gt;;\n}\n\n.te-btn-big:hover .te-tip {\n   margin-left: -8em;\n   margin-top: -1.66em;\n   z-index: 100;\n   display: unset;\n}\n\n.te-btn-action:hover .te-tip,\n.te-created:hover .te-tip,\n.te-modified:hover .te-tip {\n   margin-left: -0.4em;\n   margin-top: -1.35em;\n   z-index: 100;\n   display: unset;\n}\n\n.te-text:hover .te-tip {\n   margin-left: -0.8em;\n   margin-top: -0.75em;\n   z-index: 100;\n   display: unset;\n}\n\n\n/* meta info */\n\n.te-created, .te-modified {\n   position: relative;\n}\n\n/* images */\n\n.te-created svg, .te-modified svg {\n   max-height: 1.25em;\n   opacity: 0.6;\n   margin-bottom: -0.2em;\n}\n\n/* very small screens */\n\n@media (max-width: 500px) {\n   .te-btn-action {\n      margin: 0.3em 0.8em 0 0.5em;\n   }\n}&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/telements.css&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet ToDoDone Listreveal ToDoComponents&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170222225704140&quot;
-        },
-        &quot;$:/plugins/telmiger/lib/telements-print.css&quot;: {
-            &quot;created&quot;: &quot;20170201215840974&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;/* print optimisation for (t)elements */\n\n@media print {\n\n.te-noprint, \n.te-btn-action, .te-btn-action.muted, \n.te-btn-big, .te-btn-big.te-first, .te-btn-big.te-second, .te-btn-big.te-third,\n.te-edit, .te-to-top { \n   display: none;\n}\n\n/* header */\n\nheader {\n   background-color: transparent;\n}\n\n/* show buttons? reset display */\n/* big buttons */\n\n/* action buttons */\n\n.te-btn-action.todo-deadline, .te-btn-action.te-prio {\n   display: initial;\n}\n\n.te-btn-action.te-prio span.te-prionr, .te-btn-action.te-prio.prio2 span.te-prionr, \n.te-btn-action.te-prio.prio3 span.te-prionr, .te-btn-action.te-prio.prio4 span.te-prionr {\n   color: #ddd;\n}\n\n.te-btn-action.te-prio {\n   background-color: #ddd;\n   border: 3px solid black;\n}\n.te-btn-action.te-prio.prio2 {\n   background-color: #bbb;\n}\n.te-btn-action.te-prio.prio3 {\n   background-color: #999;\n}\n.te-btn-action.te-prio.prio4 {\n   background-color: #777;\n}\n\n/* date picker button */\n\n.te-btn-action.deadline span svg {\n   opacity: 0.66;\n}\n\n/* text */\n\n/* meta info */\n\n/* images */\n\n.te-created svg, .te-modified svg {\n   opacity: 0.6;\n}\n\n\n/* **** END of print optimisation **** */\n}\n&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/lib/telements-print.css&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet Listreveal ToDoComponents&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170222224422039&quot;
-        },
-        &quot;$:/plugins/telmiger/listreveal/lr&quot;: {
-            &quot;created&quot;: &quot;20160811053433681&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;\\define listrevealButton(title,tooltip:\&quot;Details\&quot;,close:\&quot;Close\&quot;,class:\&quot;\&quot;)\n&lt;$vars showclass=\&quot;\&quot;\&quot;listreveal-btn-show te-noprint $class$\&quot;\&quot;\&quot; hideclass=\&quot;\&quot;\&quot;listreveal-btn-hide te-noprint $class$\&quot;\&quot;\&quot;&gt;\n&lt;$set name=\&quot;qualstate\&quot; value=&lt;&lt;qualify \&quot;$:/state/listreveal_$title$_\&quot;&gt;&gt; &gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;qualstate&gt;&gt; text=\&quot;visible\&quot; animate=\&quot;yes\&quot; class=\&quot;listreveal\&quot;&gt;\n   &lt;$button set=&lt;&lt;qualstate&gt;&gt; setTo=\&quot;visible\&quot; class=&lt;&lt;showclass&gt;&gt; tooltip=\&quot;$tooltip$\&quot;&gt;…&lt;/$button&gt;&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;qualstate&gt;&gt; text=\&quot;visible\&quot; animate=\&quot;yes\&quot; class=\&quot;listreveal\&quot;&gt;\n   &lt;$button class=&lt;&lt;hideclass&gt;&gt; tooltip=\&quot;$close$\&quot;&gt;&amp;times;&lt;$action-deletetiddler $tiddler=&lt;&lt;qualstate&gt;&gt; /&gt;\n   &lt;/$button&gt;&lt;/$reveal&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define listrevealContent(title,mode:\&quot;block\&quot;,datetime:\&quot;YYYY-MM-DD\&quot;,state:\&quot;_false_\&quot;)\n&lt;$vars state=\&quot;\&quot;\&quot;$state$\&quot;\&quot;\&quot;&gt;\n&lt;$set name=\&quot;qualstate\&quot; filter=\&quot;[&lt;state&gt;!prefix[_false_]]\&quot; value=&lt;&lt;state&gt;&gt; emptyValue=&lt;&lt;qualify \&quot;$:/state/listreveal_$title$_\&quot;&gt;&gt; &gt;\n&lt;$reveal type=\&quot;match\&quot; state=&lt;&lt;qualstate&gt;&gt; text=\&quot;visible\&quot; animate=\&quot;yes\&quot; class=\&quot;listreveal-open\&quot;&gt;\n&lt;&lt;listreveal-tags&gt;&gt;\n&lt;span class=\&quot;listreveal-content\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/listreveal-mode\&quot; text=\&quot;edit\&quot;&gt;\n   &lt;$transclude tiddler=\&quot;\&quot;\&quot;$title$\&quot;\&quot;\&quot; mode=\&quot;$mode$\&quot;/&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/listreveal-mode\&quot; text=\&quot;edit\&quot;&gt;\n   &lt;$edit tiddler=\&quot;\&quot;\&quot;$title$\&quot;\&quot;\&quot; class=\&quot;listreveal-edit-text\&quot;/&gt;\n&lt;/$reveal&gt;\n&lt;/span&gt;\n   &lt;$macrocall $name=\&quot;listreveal-meta\&quot; tiddler=\&quot;\&quot;\&quot;$title$\&quot;\&quot;\&quot; datetime=\&quot;\&quot;\&quot;$datetime$\&quot;\&quot;\&quot;/&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n&lt;/$vars&gt;\n\\end\n\n\\define listreveal-meta(tiddler,datetime)\n&lt;span class=\&quot;listreveal-meta te-flex-item\&quot;&gt;\n   &lt;span class=\&quot;te-created\&quot;&gt;{{$:/core/images/file}}&lt;span class=\&quot;te-tip\&quot;&gt;&lt;$view tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; field=\&quot;creator\&quot;/&gt;&lt;/span&gt;&lt;$view tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; field=\&quot;created\&quot; format=\&quot;date\&quot; template=\&quot;\&quot;\&quot;$datetime$\&quot;\&quot;\&quot;/&gt;&lt;/span&gt;\n   &lt;span class=\&quot;te-separator\&quot;&gt;&lt;/span&gt;\n&lt;&lt;listreveal-showmodified \&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; \&quot;\&quot;\&quot;$datetime$\&quot;\&quot;\&quot;&gt;&gt;\n\\end\n\n\\define listreveal-showmodified(tiddler,datetime)\n&lt;span class=\&quot;te-modified\&quot;&gt;{{$:/core/images/edit-button}}&lt;span class=\&quot;te-tip\&quot;&gt;&lt;$view tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; field=\&quot;modifier\&quot;/&gt;&lt;/span&gt;&lt;$view tiddler=\&quot;\&quot;\&quot;$tiddler$\&quot;\&quot;\&quot; field=\&quot;modified\&quot; format=\&quot;date\&quot; template=\&quot;\&quot;\&quot;$datetime$\&quot;\&quot;\&quot;/&gt;&lt;/span&gt;\n\\end\n\n\\define listrevealBtnEdit(class:\&quot;\&quot;)\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/listreveal-mode\&quot; text=\&quot;edit\&quot;&gt;\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Switch-to-edit-mode&gt;&gt;&gt;\n&lt;$button set=\&quot;$:/state/listreveal-mode\&quot; setTo=\&quot;edit\&quot; tooltip=&lt;&lt;tt&gt;&gt; class=\&quot;te-btn-big locked $class$\&quot;&gt;{{$:/core/images/locked-padlock}}&lt;/$button&gt;\n&lt;/$wikify&gt;\n&lt;/$reveal&gt;&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/listreveal-mode\&quot; text=\&quot;edit\&quot;&gt;\n&lt;$wikify name=\&quot;tt\&quot; text=&lt;&lt;telang Switch-to-safe-mode&gt;&gt;&gt;\n&lt;$button set=\&quot;$:/state/listreveal-mode\&quot; setTo=\&quot;locked\&quot; tooltip=&lt;&lt;tt&gt;&gt; class=\&quot;te-btn-big unlocked $class$\&quot;&gt;&lt;$action-sendmessage $message=\&quot;tm-auto-save-wiki\&quot;/&gt;&lt;span class=\&quot;tc-dirty-indicator\&quot;&gt;{{$:/core/images/unlocked-padlock}}&lt;/span&gt;&lt;/$button&gt;\n&lt;/$wikify&gt;\n&lt;/$reveal&gt;\n\\end\n\n&lt;!-- !! Listreveal Plugin Macros\n\n!!! Macros to reveal listed tiddlers\n* listrevealButton(title,tooltip:\&quot;Details\&quot;,close:\&quot;Close\&quot;,class:\&quot;\&quot;)\n** produce a button to show/hide tiddler content\n*** parameters: tooltips for show/hide actions and a CSS-class\n*  listrevealContent(title,mode:\&quot;block\&quot;,datetime:\&quot;YYYY-MM-DD\&quot;,state:\&quot;_false_\&quot;)\n** show the content of a listed tiddler\n** use the state parameter if you don’t want tu use the standard button\n*** set the state to //visible// to show tiddler content \n\n!!! Optional macro\n* listrevealBtnEdit(class:\&quot;\&quot;)\n** produce a button to \n*** put all listed tiddlers in edit mode (wikitext editor)\n*** lock the tiddlers and auto-save the wiki after editing\n\n!!! Helper macros for listrevealContent\n* listreveal-meta(tiddler,datetime)\n** show meta information of a tiddler: dates for created/modified and creator/modifier (on hover)\n*** datetime: a [[date format|http://tiddlywiki.com/#DateFormat]] string \n* listreveal-showmodified(tiddler,datetime)\n** show modified timestamp and modifier name (on hover)\n*** datetime: a [[date format|http://tiddlywiki.com/#DateFormat]] string \n\n--&gt;&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/listreveal/lr&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Macro Listreveal&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170227172955605&quot;,
-            &quot;datetime&quot;: &quot;&quot;
-        },
-        &quot;$:/plugins/telmiger/listreveal/lr.css&quot;: {
-            &quot;created&quot;: &quot;20160816052415397&quot;,
-            &quot;creator&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;text&quot;: &quot;/* listreveal styles */\n/* === optimised for: ul class=\&quot;te-list\&quot; and li class=\&quot;te-flex-item\&quot; === */\n\n\n/* buttons */\n\n.listreveal-btn-show, .listreveal-btn-hide {\n   margin: 0.2em 2px 0 0.5em;\n   color: &lt;&lt;colour sidebar-tab-foreground-selected&gt;&gt;;\n   width: 2.65em;\n   height: 1.8em;\n   border: none;\n}\n.listreveal-btn-show {\n   background-color: &lt;&lt;colour sidebar-tab-background-selected&gt;&gt;;\n   height: 1.6em;\n   width: 2.35em;\n   margin-left: 0.8em;\n}\n\n.listreveal-btn-hide, .listreveal-btn-show:hover {\n   background-color: &lt;&lt;colour sidebar-tab-background&gt;&gt;;\n}\n\n\n/* GENERAL Checklist fix for https://grosinger.net/tw5-checklist/ */\n\n.checklist .checklist-newitem-icon {\n   padding-left: 1.5em;\n   margin-left: -1.5em;\n   margin-right: 2em;\n}\n.checklist input.checklist-newitem {\n   margin-left: 0.75em;\n   width: 100%;\n}\n\nul.checklist li {\n   margin-left: 3.75em;\n   text-indent: -3.75em;\n}\n\nul.checklist li [type=\&quot;checkbox\&quot;] {\n   margin-left: 2em;\n}\n\n.checklist span.checklistitem-body {\n   margin-left: 0.87em;\n}\n\n.checklist div.checklist-removeitem-icon {\n   color: #777;\n   cursor: pointer;\n   font-size: 14pt;\n   opacity: 0.4;\n   position: absolute;\n   text-align: right;\n   width: auto;\n   display: inline-block;\n   margin-left: 0em;\n}\n.checklist div.checklist-removeitem-icon {\n   left: -2.3em;\n   top: 0;\n}\n\n/* style checked items as adjacent sibling */\n.checklist li input:checked +span {\n   color: gray;\n}\n\n/* Listreveal specific Checklist fix */\n\n.listreveal-content .checklist div.checklist-removeitem-icon {\n   margin-top: -2px;\n}\n\n\n/* tiddler content */\n\n.listreveal-open {\n   height: auto; \n   width: 100%;\n   transition: none 0s ease 0s ;\n}\n\n.listreveal-content {\n   display: block;\n   color: &lt;&lt;colour foreground&gt;&gt;;\n   background-color: &lt;&lt;colour sidebar-tab-background-selected&gt;&gt;;\n   border-top: solid 1px &lt;&lt;colour sidebar-tab-border&gt;&gt;;\n   border-bottom: solid 1px &lt;&lt;colour sidebar-tab-border&gt;&gt;;\n   line-height: 1.5;\n   padding: 0.5em 1em 1em 1em;\n  -webkit-animation: expanditem 1s ease-in-out 0s running;\n  animation-name: expanditem;\n  animation-duration: 1s;\n  animation-timing-function: ease-in-out;\n  animation-delay: 0s;\n  animation-iteration-count: 1;\n  animation-direction: normal;\n}\n\n.listreveal-content pre {\n   background-color: &lt;&lt;colour tiddler-info-background&gt;&gt;;\n}\n\n/* edit mode */\n\n.listreveal-edit-text {\n  width: 100%;\n  border: 1px solid gray;\n  padding: 1em;\n}\n\n/* meta info */\n\n.listreveal-meta.te-flex-item, .listreveal-tags.te-flex-item {\n   color: &lt;&lt;colour sidebar-tab-foreground&gt;&gt;;\n   background-color: &lt;&lt;colour sidebar-tab-background&gt;&gt;;\n   border-bottom: 1px solid &lt;&lt;colour sidebar-tab-border&gt;&gt;;\n   border-top: 1px solid &lt;&lt;colour sidebar-tab-border&gt;&gt;;\n   margin-top: -1px;\n   margin-bottom: -1px;\n   font-size: 0.85em;\n}\n\n.listreveal-meta {\n   padding-right: 0.5em;\n}\n\n/* tags info */\n\n.listreveal-tags .te-tags button.tc-tag-label {\n   background-color: &lt;&lt;colour sidebar-tab-background-selected&gt;&gt;;\n}\n\n.lr-tag-popup {\n   margin-left: 1em;\n}\n.lr-tag-popup ul {\n   margin: 0;\n   padding: 0 1em 1em 0;\n   line-height: 1.75;\n   list-style: none;\n   font-weight: 600;\n}\n.lr-tag-popup ul li:hover{\n   color: &lt;&lt;colour tiddler-link-foreground&gt;&gt;;\n}\n.lr-tag-popup ul.lr-tags-remove li:hover{\n   color: &lt;&lt;colour dirty-indicator&gt;&gt;;\n}\n.lr-tags-add li button::before {\n   content: \&quot;+&amp;#8197;\&quot;;\n   font-size: 1.2em;\n   color: &lt;&lt;colour tiddler-link-foreground&gt;&gt;;\n}\n.lr-tags-remove li button::before {\n   content: \&quot;&amp;#215;&amp;#8197; \&quot;;\n   font-size: 1.2em;\n   color: &lt;&lt;colour dirty-indicator&gt;&gt;;\n}\n\n@media (max-width: 960px) {\n}\n\n/* listreveal animation */\n\n@keyframes expanditem {\n  0% { \n      height: 0;\n      opacity: 0;\n  }\n  80.0% {\n      height: 60%;\n      opacity: 0.9;\n  }\n  100.0% {\n      height: 100%;\n      opacity: 1;\n  }\n}\n\n@-webkit-keyframes expanditem {\n  0% { \n      height: 0;\n      opacity: 0;\n  }\n  100.0% {\n      height: 100%;\n      opacity: 1;\n  }\n}&quot;,
-            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
-            &quot;title&quot;: &quot;$:/plugins/telmiger/listreveal/lr.css&quot;,
-            &quot;tags&quot;: &quot;$:/tags/Stylesheet ToDoDone Listreveal ToDoComponents&quot;,
-            &quot;modifier&quot;: &quot;Thomas Elmiger&quot;,
-            &quot;modified&quot;: &quot;20170222213836161&quot;
         }
     }
 }</pre>
@@ -9810,47 +9595,44 @@ html .tc-tiddler-controls button {
 <div created="20170124153928000" modified="20170228165423711" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
+<div created="20170124180327900" modified="20170228172235449" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20170124181402200" modified="20170304111014753" title="$:/state/tab--1498284803">
+<div created="20170124181402200" modified="20170124200057100" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
-<div created="20170124153853900" modified="20170228175915999" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+<div created="20170124153853900" modified="20170124204303300" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
-<div created="20170124204256400" modified="20170228175913175" title="$:/state/tab--2016259090">
+<div created="20170124204256400" modified="20170124204256400" title="$:/state/tab--2016259090">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
 <div created="20170124191111400" modified="20170124191112400" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
-<div created="20170228144315040" modified="20170228173235114" title="$:/state/tab--937011655">
+<div created="20170228144315040" modified="20170228172411211" title="$:/state/tab--937011655">
 <pre>TabellaContatti</pre>
 </div>
-<div created="20170124152428800" modified="20170228175809224" title="$:/state/tab-1749438307">
+<div created="20170124152428800" modified="20170227223939728" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170302094424833" title="$:/state/tab/sidebar--1835078512">
+<div created="20170124170956000" modified="20170228142801973" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
 </div>
-<div created="20170124190210900" modified="20170228175857166" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<div created="20170124190210900" modified="20170124204249900" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
 </div>
-<div list="structure [[Draft of '$:/contacts/macro/contactpage']] [[Draft of '$:/contacts/macro/connect']] [[Draft of 'New Tiddler 2']]" title="$:/StoryList">
+<div list="" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
+<div case-insensitive="(?i)" created="20170124171937300" modified="20170228172147630" title="$:/temp/advancedsearch">
 <pre></pre>
-</div>
-<div case-insensitive="(?i)" created="20170124171937300" field="text" modified="20170304111011788" title="$:/temp/advancedsearch">
-<pre>mytitle</pre>
 </div>
 <div created="20170228172301280" modified="20170228172302609" title="$:/temp/edit/Jack/phonenumber">
 <pre>noedit</pre>
@@ -9872,9 +9654,6 @@ html .tc-tiddler-controls button {
     }
 }</pre>
 </div>
-<div created="20170304105846854" modified="20170304105847105" title="$:/temp/NewTagName">
-<pre></pre>
-</div>
 <div created="20170124165957300" modified="20170227224024109" title="$:/temp/NewTagName/email">
 <pre></pre>
 </div>
@@ -9890,13 +9669,10 @@ html .tc-tiddler-controls button {
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170304110559119" title="$:/temp/search">
+<div created="20170124171931100" modified="20170228144801507" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
-<pre></pre>
-</div>
-<div created="20170228224431386" modified="20170228224805051" newtitle="Alì Ghost" title="$:/temp/Stealth">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
@@ -10011,46 +9787,11 @@ html .tc-tiddler-controls button {
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170228224440560" email="giorgio.kambo@hotmail.com" group="psico" location="italia abruzzo LAquila" modified="20170228225059226" tags="contact" title="Abej">
-<pre></pre>
-</div>
-<div created="20170228180100758" modified="20170228225255142" tags="$:/tags/SideBar" title="AddContact">
-<pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
-&lt;div class=&quot;tc-tiddler-frame&quot;&gt;
-
-!!! &lt;$link to={{$:/temp/Stealth!!newtitle}}&gt;See Contact&lt;/$link&gt;
-
-&lt;$edit tiddler=&quot;$:/temp/Stealth&quot; field=&quot;newtitle&quot; class=&quot;tc-edit-texteditor&quot; default=&quot;ooo&quot; placeholder=&quot;Name&quot;/&gt;
-&lt;br&gt;
-&lt;$edit field=&quot;mobilenumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Mobile&quot;/&gt;
-
-&lt;$edit field=&quot;phoneNumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Phone&quot;/&gt;
-&lt;br&gt;
-&lt;$edit field=&quot;email&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;email&quot;/&gt;
-
-&lt;$edit field=&quot;location&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;location&quot;/&gt;
-&lt;br&gt;
-&lt;$edit field=&quot;group&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;group&quot;/&gt;
-
-&lt;$edit field=&quot;notes&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
-
-&lt;$edit field=&quot;quick&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Phone&quot;/&gt;
-&lt;/div&gt;</pre>
-</div>
-<div created="20170228224716190" email="alessandrofalcione@hotmail.it tukulka@cryptolab.net" group="amici" location="italia lazio roma" mobilenumber="3931312782" modified="20170228225032858" tags="contact" title="Alessandro Falcione">
-<pre></pre>
-</div>
-<div created="20170228224811590" group="giocoleria" location="italia" mobilenumber="3456054228" modified="20170228224912152" tags="contact" title="Alì Ghost">
-<pre></pre>
-</div>
-<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170228224335532" tags="contact" title="anna karinina">
+<div created="20170124205118500" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170124205228800" tags="contact" title="anna karinina">
 <pre>!Mobile
 &lt;&lt;mobile&gt;&gt;
-
 !SMS
-
 &lt;&lt;sms&gt;&gt;
-
 !Phone
 &lt;&lt;phone&gt;&gt;
 !E-mail
@@ -10061,7 +9802,7 @@ html .tc-tiddler-controls button {
 {{!!jabber}}
 </pre>
 </div>
-<div created="20170124153416900" modified="20170228174435457" tags="" title="Contacts">
+<div created="20170124153416900" modified="20170228172057018" tags="" title="Contacts">
 <pre>{{$:/.tb/ui/AdvancedSearch/Field}}
 
 
@@ -10192,232 +9933,101 @@ html .tc-tiddler-controls button {
 <div created="20170124175935000" modified="20170124203345900" tags="menu" title="ContactTable">
 <pre>&lt;&lt;RowTable '[tag[contact]] -[prefix[$:/]]' '[tag[Column Data]]'&gt;&gt;</pre>
 </div>
-<div created="20170304101014861" modified="20170304103228097" tags="tmp" title="contattiprova">
-<pre>\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
+<div created="20170227224010914" modified="20170228144311705" tags="" title="ControlPanel">
+<pre>&lt;&lt;tabs &quot;TabellaContatti location groups&quot;&gt;&gt;</pre>
+</div>
+<div created="20170124183126600" draft.of="New Tiddler 1" draft.title="New Tiddler 1" modified="20170124183226800" tags="" title="Draft of 'New Tiddler 1'">
+<pre>&lt;$set name=&quot;searchTiddler&quot; value=&quot;$:/temp/search&quot;&gt;
+&lt;div class=&quot;tc-search&quot;&gt;
+&lt;$edit-text tiddler=&quot;$:/temp/search&quot; type=&quot;search&quot; tag=&quot;input&quot; focus={{$:/config/Search/AutoFocus}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-popup-handle&quot;/&gt;
+&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
 
-\define chiama(mobilenumber)
-&lt;a href=&quot;tel:$(mobilenumber)$&quot;&gt;
-
-&lt;$tiddler tiddler=&quot;contattiprova&quot;&gt;
-&lt;$transclude tiddler=&quot;john&quot; field=&quot;mobilenumber&quot;/&gt;
-&lt;/$tiddler&gt;
-
-&lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
-
-[img width=20 [$:/contacts/img/mobilecall.svg]]   Call 
-
-&lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt; field=&quot;mobilenumber&quot;/&gt;
-
-
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;
-&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
+&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter=&quot;[!is[system]search{$(searchTiddler)$}]&quot;/&gt;&quot;&quot;&quot;&gt;
+{{$:/core/images/down-arrow}} {{$:/language/Search/Matches}}
+&lt;/$set&gt;
 &lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-&lt;div class=&quot;tc-drop-down&quot;&gt;
-
-&lt;&lt;chiama&gt;&gt;
-
-
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/temp/search&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
+&lt;$button to=&quot;$:/AdvancedSearch&quot; tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class=&quot;tc-btn-invisible&quot;&gt;
+{{$:/core/images/advanced-search-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
 &lt;/div&gt;
+
+&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown-wrapper&quot; state=&quot;$:/temp/search&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+
+&lt;$reveal tag=&quot;div&quot; class=&quot;tc-block-dropdown tc-search-drop-down tc-popup-handle&quot; state=&lt;&lt;qualify &quot;$:/state/popup/search-dropdown&quot;&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+
+{{$:/core/ui/SearchResults}}
+
 &lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;</pre>
+&lt;/$reveal&gt;
+&lt;/$set&gt;</pre>
 </div>
-<div created="20170227224010914" modified="20170228174022557" tags="menu" title="ControlPanel">
-<pre>&lt;&lt;tabs &quot;ContactTable location groups&quot;&gt;&gt;</pre>
-</div>
-<div created="20170124171122600" draft.of="$:/contacts/macro/connect" draft.title="$:/contacts/macro/connect" mobilenumber="" modified="20170304113147873" tags="$:/tags/Macro" title="Draft of '$:/contacts/macro/connect'">
-<pre>\define mobilecall(mobilenumber)
-&lt;a href=&quot;tel:$(mobilenumber)$&quot;&gt;
+<div created="20170228171326152" draft.of="New Tiddler 2" draft.title="New Tiddler 2" modified="20170228171901404" tags="" title="Draft of 'New Tiddler 2'">
+<pre>\define searchInField(field, for, ci)
+&lt;$list filter=&quot;[!is[shadow]!is[system]regexp:$field$[$for$$ci$]limit[1]]&quot;&gt;
+&lt;dt&gt;$field$&lt;/dt&gt;
+&lt;/$list&gt;
 
-&lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
-
-[img width=20 [$:/contacts/img/mobilecall.svg]]   Call {{!!title}}
-\end
-
-
-\define sendsms(mobilenumber)
-&lt;a href=&quot;sms:$(mobilenumber)$&quot;&gt;
-&lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
-
-
- [img width=20 [$:/contacts/img/sms.svg]]   Text {{!!title}}
-
-
-\end
-
-\define mailto(email)
-&lt;a href=&quot;mailto:$(email)$&quot;&gt;
-&lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
-
-
- [img width=20 [$:/contacts/img/mailto.svg]]   Mailto {{!!title}}
-
-
-\end
-
-
-
-\define phonecall(phonenumber)
-&lt;a href=&quot;tel:$(phonenumber)$&quot;&gt;
-&lt;p style=&quot;border:1px solid grey; padding-left: 6px; padding-bottom:-15px; padding-top:-10px;border-radius:10px; font-size:16px; text-decoration: none;&quot;&gt;
-
-
- [img width=20 [$:/contacts/img/phonecall.svg]]   Call {{!!title}}
-
-\end</pre>
-</div>
-<div created="20170124172435700" draft.of="$:/contacts/macro/contactpage" draft.title="$:/contacts/macro/contactpage" modified="20170304113206340" tags="$:/tags/Macro" title="Draft of '$:/contacts/macro/contactpage'">
-<pre>\define mobile()
-&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;mobilecall&gt;&gt;
-&lt;/$vars&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]tag[contact]regexp:$field$[$for$$ci$]]&quot;&gt;
+&lt;dd&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/dd&gt;
 &lt;/$list&gt;
 \end
 
-\define sms()
-&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
-&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;sendsms&gt;&gt;
-&lt;/$vars&gt;
+&lt;style&gt;.tc-advanced-search-check imput {width:auto !important;}&lt;/style&gt;
+
+Search in fields... &amp;nbsp; &lt;span class=&quot;tc-advanced-search-check&quot;&gt;&lt;$checkbox field=&quot;case-insensitive&quot; tiddler=&quot;$:/temp/advancedsearch&quot; checked=&quot;(?i)&quot;&gt; case insensitive&lt;/$checkbox&gt;&lt;/span&gt;
+
+&lt;div class=&quot;tc-search&quot;&gt;
+&lt;$edit-text tiddler=&quot;$:/temp/advancedsearch&quot; type=&quot;search&quot; tag=&quot;input&quot;/&gt; &lt;$select field=&quot;field&quot; tiddler=&quot;$:/temp/advancedsearch&quot; default=&quot;&quot;&gt;
+&lt;option value=&quot;&quot;&gt;*any&lt;/option&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]fields[]sort[]]  -bag -caption -created -creator -draft.of -draft.title -list-before -modified -modifier -revision -type&quot; variable=&quot;field&quot;&gt;
+&lt;option value=&lt;&lt;field&gt;&gt;&gt;&lt;&lt;field&gt;&gt;&lt;/option&gt;
 &lt;/$list&gt;
-\end
-
-\define phone()
-&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
-&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;phonecall&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-\end
-
-
-\define email()
-&lt;$list filter=&quot;[all[current]tag[contact]tags:email[]]&quot;&gt;
-&lt;$vars email=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;mailto&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
-\end</pre>
-</div>
-<div created="20170124163331000" draft.of="Jack" draft.title="Jack" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170304101424869" phonenumber="23664780978" tags="contact" title="Draft of 'Jack'">
-<pre>!Mobile
-&lt;&lt;mobile&gt;&gt;
-!SMS
-&lt;&lt;sms&gt;&gt;
-!PHONE
-&lt;&lt;phone&gt;&gt;
-!EMAIL
-&lt;&lt;email&gt;&gt;
-
-</pre>
-</div>
-<div created="20170304105818870" draft.of="New Tiddler 2" draft.title="test" modified="20170304114012376" tags="tmp" title="Draft of 'New Tiddler 2'">
-<pre>\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
+&lt;/$select&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$button class=&quot;tc-btn-invisible&quot;&gt;
+&lt;$action-setfield $tiddler=&quot;$:/temp/advancedsearch&quot; $field=&quot;text&quot; $value=&quot;&quot;/&gt;
+{{$:/core/images/close-button}}
 &lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-&lt;div class=&quot;tc-drop-down&quot;&gt;
-
-&lt;$list filter=&quot;[all[current]]&quot;&gt;
-
-&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
-&lt;&lt;mobilecall&gt;&gt;
-
-
-&lt;$vars mobilenumber=&lt;&lt;mytitle&gt;&gt;&gt;
-&lt;&lt;mobilecall&gt;&gt;
-&lt;/$vars&gt;
-
-&lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt;/&gt;
-
+&lt;/$reveal&gt;
 &lt;/div&gt;
+
+&lt;$reveal state=&quot;$:/temp/advancedsearch&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch!!field&quot; type=&quot;match&quot; text=&quot;&quot;&gt;
+&lt;dl&gt;
+&lt;$list filter=&quot;[!is[shadow]!is[system]fields[]]&quot; variable=&quot;field&quot;&gt;
+
+&lt;$reveal type=nomatch text=text default=&lt;&lt;field&gt;&gt;&gt;
+&lt;$macrocall $name=&quot;searchInField&quot; field=&lt;&lt;field&gt;&gt; for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/&gt;
 &lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
 &lt;/$list&gt;
+&lt;/dl&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&quot;$:/temp/advancedsearch!!field&quot; type=&quot;nomatch&quot; text=&quot;&quot;&gt;
 
-
-</pre>
+&lt;dl&gt;
+&lt;$macrocall $name=&quot;searchInField&quot; field={{$:/temp/advancedsearch!!field}} for={{$:/temp/advancedsearch}} ci={{$:/temp/advancedsearch!!case-insensitive}}/&gt;
+&lt;/dl&gt;
+&lt;/$reveal&gt;
+&lt;/$reveal&gt;</pre>
 </div>
-<div created="20170301213827063" draft.of="New Tiddler" draft.title="New Tiddler" modified="20170302095436076" tags="" title="Draft of 'New Tiddler'">
-<pre>
-
-
-
-\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
-&lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-
-
-&lt;$view field=&quot;text&quot; tiddler=&lt;&lt;mytitle&gt;&gt;/&gt;
-
-
-&lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;
-
-
-
-
-```
-\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
-&lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-&lt;div class=&quot;tc-drop-down&quot;&gt;
-
-&lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt;/&gt;
-
-&lt;/div&gt;
-&lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;
-```
-</pre>
+<div created="20170228171827192" draft.of="New Tiddler 3" draft.title="New Tiddler 3" modified="20170228171833076" tags="" title="Draft of 'New Tiddler 3'">
+<pre>{{$:/temp/advancedsearch!!case-insensitive}}</pre>
 </div>
-<div created="20170228174513549" modified="20170228174534768" tags="" title="group">
+<div created="20170124152144900" draft.of="New Tiddler" draft.title="Contacts" modified="20170124152148600" tags="" title="Draft of 'New Tiddler'">
 <pre></pre>
+</div>
+<div created="20170228144151428" modified="20170228144230059" tags="" title="groups">
+<pre>!groups
+&lt;h2&gt;
+&lt;$set name=TheField value=group&gt;
+&lt;$list filter=&quot;[tags:group[]] +[sort[title]]&quot;&gt;
+{{||$:/plugins/inmysocks/GenericTagFields/LikeTagPills}}
+&lt;/$list&gt;
+&lt;/$set&gt;</pre>
 </div>
 <div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170124200935200" phonenumber="23664780978" tags="contact" title="Jack">
 <pre>!Mobile
@@ -10476,94 +10086,6 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 
 
 </pre>
-</div>
-<div created="20170301213827063" modified="20170301214833168" tags="" title="New Tiddler">
-<pre>\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
-&lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-
-
-&lt;$view field=&quot;text&quot; tiddler=&lt;&lt;mytitle&gt;&gt;/&gt;
-
-
-&lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;
-
-
-
-
-```
-\define makeState()
-&lt;&lt;qualify $(stateTiddler)$&gt;&gt;
-\end
-
-&lt;$list filter=&quot;[tag[contact]]&quot; variable=&quot;mytitle&quot;&gt;
-
-&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
-&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
-* &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
-&lt;/$button&gt;
-
-&lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
-&lt;div class=&quot;tc-drop-down&quot;&gt;
-
-&lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt;/&gt;
-
-&lt;/div&gt;
-&lt;/$reveal&gt;
-&lt;/$wikify&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;
-```
-</pre>
-</div>
-<div created="20170302095439063" modified="20170302095947435" tags="" title="New Tiddler 1">
-<pre>&lt;$set name=&quot;listfilter&quot; value=&quot;&quot;&quot;[tag[contact]sort[title]!is[system]]&quot;&quot;&quot;&gt;
-&lt;ul class=&quot;te-list&quot;&gt;
-&lt;$list filter=&lt;&lt;listfilter&gt;&gt;&gt;
-&lt;$set name=&quot;tidTitle&quot; value={{!!title}}&gt;
-   &lt;li class=&quot;todo-item te-flex-item&quot;&gt;
-      &lt;span class=&quot;te-flex-item te-flex-half-full&quot;&gt;
-         &lt;span class=&quot;te-flex-item te-flex-content te-flex-left&quot;&gt;
-   &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
-         &lt;/span&gt;
-      &lt;/span&gt;
-      &lt;span class=&quot;te-flex-item te-flex-half-full&quot;&gt;
-         &lt;span class=&quot;te-flex-item te-flex-content te-flex-right&quot;&gt;
-            &lt;&lt;teBtnEditShowModified&gt;&gt;
-&lt;$wikify name=&quot;cl&quot; text=&lt;&lt;telang close&gt;&gt; &gt;
-&lt;$wikify name=&quot;tt&quot; text=&lt;&lt;telang Details&gt;&gt; &gt;
-   &lt;$macrocall $name=&quot;listrevealButton&quot; title=&lt;&lt;tidTitle&gt;&gt; tooltip=&lt;&lt;tt&gt;&gt; close=&lt;&lt;cl&gt;&gt;/&gt;
-&lt;/$wikify&gt;
-&lt;/$wikify&gt;
-         &lt;/span&gt;
-      &lt;/span&gt;
-&lt;$wikify name=&quot;tpl&quot; text=&lt;&lt;telang date-created-tmpl&gt;&gt; &gt;
-   &lt;$macrocall $name=&quot;listrevealContent&quot; title=&lt;&lt;tidTitle&gt;&gt; datetime=&lt;&lt;tpl&gt;&gt;/&gt;
-&lt;/$wikify&gt;
-   &lt;/li&gt;
-&lt;/$set&gt;
-&lt;/$list&gt;
-&lt;/ul&gt;
-&lt;/$set&gt;</pre>
-</div>
-<div caption="NewContact" created="20170228181033982" modified="20170228182607988" tags="$:/tags/TopBar $:/tags/TopLeftBar" title="NewContact">
-<pre>&lt;$link to=AddContact&gt;
-
-{{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
-
-&lt;/$link&gt;</pre>
 </div>
 <div created="20170124203842700" modified="20170124204230100" tags="menu" title="structure">
 <pre>that's still all a work in progress.
@@ -11036,7 +10558,7 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;/$reveal&gt;
 \end</pre>
 </div>
-<div caption="Menu" created="20170124203041600" modified="20170228180619032" tags="$:/tags/SideBar" title="tableofcontents">
+<div caption="Menu" created="20170124203041600" modified="20170124203401500" tags="$:/tags/SideBar" title="tableofcontents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
 &lt;&lt;toc-selective-expandable 'TOC'&gt;&gt;
@@ -11046,6 +10568,18 @@ $:/state/tables/Sort/$(RowOrColumn)$/$(FieldsList)$
 &lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc &quot;menu&quot;&gt;&gt;
 &lt;/div&gt;</pre>
+</div>
+<div created="20170124175559400" modified="20170124205305100" tags="menu" title="todo">
+<pre>* call the [[style macro|$:/contacts/macro/connectstyle]] from within the [[connect macro|$:/contacts/macro/connect]], so i only have to edit one style for all
+** without breaking everything
+* how can I push cariables into [[$:/contacts/macro/AZorder]], so that in [[Contacts]] I don't need to copy and paste everything?
+*check the style and see if it fits your phone (looks like)
+* adjust sidebar and make it hidden in phone by default
+*remove tag suggestion
+
+
+
+</pre>
 </div>
 
 </div>
