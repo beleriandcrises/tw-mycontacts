@@ -9854,7 +9854,7 @@ html .tc-tiddler-controls button {
 <div created="20170124190210900" modified="20170228175857166" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
 </div>
-<div list="structure $:/contacts/macro/contactpage $:/contacts/macro/connect index" title="$:/StoryList">
+<div list="Contacts index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -9898,8 +9898,8 @@ html .tc-tiddler-controls button {
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170315202204433" title="$:/temp/search">
-<pre></pre>
+<div created="20170124171931100" modified="20170315204404914" title="$:/temp/search">
+<pre>Contacts</pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
 <pre></pre>
@@ -10056,7 +10056,7 @@ ADD CONTACT
 <div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315202438781" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
 <pre></pre>
 </div>
-<div created="20170124153416900" modified="20170315172301019" tags="" title="Contacts">
+<div created="20170124153416900" modified="20170315204419669" tags="" title="Contacts">
 <pre>\define makeState()
 &lt;&lt;qualify $(stateTiddler)$&gt;&gt;
 \end
@@ -10071,7 +10071,7 @@ ADD CONTACT
 &lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
 &lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
 
-* &lt;h2&gt; 
+&lt;h2&gt; 
 &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
 &lt;/$button&gt;
 &lt;/h2&gt;
