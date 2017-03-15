@@ -829,7 +829,7 @@ Error message and password prompt
 
 \end</pre>
 </div>
-<div created="20170124171122600" mobilenumber="" modified="20170315200321905" tags="$:/tags/Macro" title="$:/contacts/macro/connect">
+<div created="20170124171122600" mobilenumber="" modified="20170315203942631" tags="$:/tags/Macro" title="$:/contacts/macro/connect">
 <pre>\define mobilecall(mobilenumber)
 &lt;a href=&quot;tel:$(mobilenumber)$&quot;&gt;
 
@@ -875,7 +875,7 @@ Error message and password prompt
 &lt;p style=&quot;border:3px solid black; padding-left: 6px; margin-left:8px; margin-right:8px; border-radius:10px; font-size:25px; text-decoration: none;&quot;&gt;
 \end</pre>
 </div>
-<div created="20170124172435700" modified="20170315200315576" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
+<div created="20170124172435700" modified="20170315204013122" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
 <pre>\define mobile()
 &lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
 &lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
@@ -885,8 +885,8 @@ Error message and password prompt
 \end
 
 \define sms()
-&lt;$list filter=&quot;[all[current]tag[contact]tags:phonenumber[]]&quot;&gt;
-&lt;$vars phonenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
+&lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
+&lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
 &lt;&lt;sendsms&gt;&gt;
 &lt;/$vars&gt;
 &lt;/$list&gt;
@@ -9854,7 +9854,7 @@ html .tc-tiddler-controls button {
 <div created="20170124190210900" modified="20170228175857166" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
 </div>
-<div list="index" title="$:/StoryList">
+<div list="structure $:/contacts/macro/contactpage $:/contacts/macro/connect index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -10054,8 +10054,7 @@ ADD CONTACT
 &lt;/div&gt;</pre>
 </div>
 <div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315202438781" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
-<pre>
-</pre>
+<pre></pre>
 </div>
 <div created="20170124153416900" modified="20170315172301019" tags="" title="Contacts">
 <pre>\define makeState()
