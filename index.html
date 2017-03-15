@@ -373,6 +373,8 @@ Error message and password prompt
 
 <li>delete</li>
 
+<li>Draft of 'location'</li>
+
 <li>group</li>
 
 <li>index</li>
@@ -9859,8 +9861,8 @@ background-color:$(backgroundColor)$;
 <div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20170315172402095" modified="20170315215242978" title="$:/state/tab--111876673">
-<pre>Contacts</pre>
+<div created="20170315172402095" modified="20170315223217873" title="$:/state/tab--111876673">
+<pre>delete</pre>
 </div>
 <div created="20170124181402200" modified="20170315193556189" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
@@ -9904,7 +9906,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124190210900" modified="20170315220319996" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
 </div>
-<div list="AddContact index" title="$:/StoryList">
+<div list="location group index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -9948,13 +9950,13 @@ background-color:$(backgroundColor)$;
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170315212148388" title="$:/temp/search">
-<pre></pre>
+<div created="20170124171931100" modified="20170315225012602" title="$:/temp/search">
+<pre>lo</pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
 <pre></pre>
 </div>
-<div created="20170228224431386" modified="20170315212107833" newtitle="" title="$:/temp/Stealth">
+<div created="20170228224431386" modified="20170315223152441" newtitle="" title="$:/temp/Stealth">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
@@ -10179,10 +10181,17 @@ Delete selected
 
 &lt;/$list&gt;</pre>
 </div>
-<div created="20170228174513549" modified="20170315172456410" tags="" title="group">
+<div modified="20170315225031356" title="Draft of 'location'">
+<pre></pre>
+</div>
+<div created="20170228174513549" modified="20170315225009675" tags="" title="group">
 <pre>!Group
+
 &lt;h2&gt;
+@@line-height:200%;
 &lt;$set name=TheField value=group&gt;
+
+
 &lt;$list filter=&quot;[tags:group[]] +[sort[title]]&quot;&gt;
 {{||$:/plugins/inmysocks/GenericTagFields/LikeTagPills}}
 &lt;/$list&gt;
@@ -10215,9 +10224,10 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 
 </pre>
 </div>
-<div created="20170228143420285" modified="20170228144237459" tags="" title="location">
+<div created="20170228143420285" modified="20170315225030294" tags="" title="location">
 <pre>!Location
 &lt;h2&gt;
+@@line-height:200%;
 &lt;$set name=TheField value=location&gt;
 &lt;$list filter=&quot;[tags:location[]] +[sort[title]]&quot;&gt;
 {{||$:/plugins/inmysocks/GenericTagFields/LikeTagPills}}
