@@ -367,6 +367,8 @@ Error message and password prompt
 
 <li>ControlPanel</li>
 
+<li>delete</li>
+
 <li>group</li>
 
 <li>index</li>
@@ -9809,8 +9811,8 @@ html .tc-tiddler-controls button {
 <div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20170315172402095" modified="20170315192506786" title="$:/state/tab--111876673">
-<pre>Contacts</pre>
+<div created="20170315172402095" modified="20170315215058658" title="$:/state/tab--111876673">
+<pre>delete</pre>
 </div>
 <div created="20170124181402200" modified="20170315193556189" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
@@ -10053,7 +10055,7 @@ ADD CONTACT
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315202438781" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
+<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315215105675" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
 <pre></pre>
 </div>
 <div created="20170124153416900" modified="20170315205808483" tags="" title="Contacts">
@@ -10120,6 +10122,19 @@ ADD CONTACT
 <div created="20170227224010914" modified="20170315194039276" tags="menu" title="ControlPanel">
 <pre>&lt;&lt;tabs &quot;ContactTable location groups&quot;&gt;&gt;</pre>
 </div>
+<div created="20170315215024864" modified="20170315215043804" tags="" title="delete">
+<pre>&lt;$button class=&quot;tc-btn&quot;&gt;
+&lt;$action-deletetiddler $filter=[tag[delete]]/&gt;
+Delete selected
+&lt;/$button&gt;
+
+
+&lt;$list filter=&quot;[tag[contact]!prefix[Draft]!is[system]sort[title]]&quot;&gt; 
+
+&lt;$checkbox tag=&quot;delete&quot;&gt;&lt;/$checkbox&gt; {{!!title}} 
+
+&lt;/$list&gt;</pre>
+</div>
 <div created="20170228174513549" modified="20170315172456410" tags="" title="group">
 <pre>!Group
 &lt;h2&gt;
@@ -10130,13 +10145,13 @@ ADD CONTACT
 &lt;/$set&gt;
 </pre>
 </div>
-<div created="20170315172303205" modified="20170315172522478" tags="" title="index">
-<pre>&lt;&lt;tabs  &quot;Contacts location group&quot;&gt;&gt;</pre>
+<div created="20170315172303205" modified="20170315215055427" tags="" title="index">
+<pre>&lt;&lt;tabs  &quot;Contacts location group delete&quot;&gt;&gt;</pre>
 </div>
-<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170315202418263" phonenumber="23664780978" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; Email &lt;&lt;email&gt;&gt;" tags="contact" title="Jack">
+<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170315215105013" phonenumber="23664780978" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; Email &lt;&lt;email&gt;&gt;" tags="contact" title="Jack">
 <pre></pre>
 </div>
-<div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170315202345661" phonenumber="477757" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact $:/tags/template" title="john">
+<div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170315215103977" phonenumber="477757" quickcontact="!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;" tags="contact $:/tags/template" title="john">
 <pre>NEVER mention his cousin</pre>
 </div>
 <div created="20170124162718600" modified="20170315201214666" tags="" title="licenses">
@@ -10174,7 +10189,7 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 {{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
 &lt;/$button&gt;</pre>
 </div>
-<div created="20170124203842700" modified="20170315202007285" tags="menu" title="structure">
+<div created="20170124203842700" modified="20170315215234590" tags="menu" title="structure">
 <pre>all the macros I use are utterly simple, just providing me (and you) a easier way to change order and fiddle.
 I've probably overdone encapsulating one inside the other though, so here is what's here
 
@@ -10249,6 +10264,13 @@ Example:
 ```
 
 Done. A bit of work I guess, I could have make it easier, but does the job. 
+
+!! delete
+
+the batch delete at [[delete]] is very simple. 
+The checkbox widget gives a tag called &quot;delete&quot;. The button deletes every contact tagged with &quot;delete&quot;.
+
+So don't tag your contacts that way or change the tag!
 
 ! Control Panel
 
