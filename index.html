@@ -225,6 +225,8 @@ Error message and password prompt
 
 <li>$:/config/TopLeftBarButtons/Visibility/NewContact</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button</li>
+
 <li>$:/contacts/img/mailto.svg</li>
 
 <li>$:/contacts/img/mobilecall.svg</li>
@@ -268,6 +270,8 @@ Error message and password prompt
 <li>$:/plugins/tongerner/toolbar/new-template-tiddler-button</li>
 
 <li>$:/plugins/tongerner/toolbar/styles</li>
+
+<li>$:/plugins/tongerner/toolbar/tagging</li>
 
 <li>$:/settings/AlternateTagFields/email</li>
 
@@ -602,6 +606,9 @@ Error message and password prompt
 </div>
 <div created="20170228182620774" modified="20170315181424511" title="$:/config/TopLeftBarButtons/Visibility/NewContact">
 <pre>show</pre>
+</div>
+<div created="20170315220327187" modified="20170315220327187" title="$:/config/ViewToolbarButtons/Visibility/$:/plugins/tongerner/toolbar/toggle-tagging-button">
+<pre>hide</pre>
 </div>
 <div created="20170124163149900" modified="20170124163151700" title="$:/contacts/img/mailto.svg" type="image/svg+xml">
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;
@@ -9775,6 +9782,47 @@ html .tc-tiddler-controls button {
 }
 &lt;/pre&gt;</pre>
 </div>
+<div created="20160111124429261" creator="TonGerner" list-after="$:/core/ui/ViewTemplate/tags" modified="20170315220256093" modifier="TonGerner" title="$:/plugins/tongerner/toolbar/tagging">
+<pre>\define lingo-base() $:/language/EditTemplate/
+\define tag-styles()
+background-color:$(backgroundColor)$;
+\end
+&lt;div class=&quot;tc-edit-tags&quot;&gt;
+&lt;$fieldmangler&gt;
+&lt;$list filter=&quot;[all[current]tags[]sort[title]]&quot; storyview=&quot;pop&quot;&gt;&lt;$set name=&quot;backgroundColor&quot; value={{!!color}}&gt;&lt;span style=&lt;&lt;tag-styles&gt;&gt; class=&quot;tc-tag-label&quot;&gt;
+&lt;$view field=&quot;title&quot; format=&quot;text&quot; /&gt;
+&lt;$button message=&quot;tm-remove-tag&quot; param={{!!title}} class=&quot;tc-btn-invisible tc-remove-tag-button&quot;&gt;&amp;times;&lt;/$button&gt;&lt;/span&gt;
+&lt;/$set&gt;
+&lt;/$list&gt;
+
+&lt;div class=&quot;tc-edit-add-tag&quot;&gt;
+&lt;span class=&quot;tc-add-tag-name&quot;&gt;
+&lt;$edit-text tiddler=&quot;$:/temp/NewTagName&quot; tag=&quot;input&quot; default=&quot;&quot; placeholder={{$:/language/EditTemplate/Tags/Add/Placeholder}} focusPopup=&lt;&lt;qualify &quot;$:/state/popup/tags-auto-complete&quot;&gt;&gt; class=&quot;tc-edit-texteditor tc-popup-handle&quot;/&gt;
+&lt;/span&gt; &lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/tags-auto-complete&quot;&gt;&gt; class=&quot;tc-btn-invisible tc-btn-dropdown&quot; tooltip={{$:/language/EditTemplate/Tags/Dropdown/Hint}} aria-label={{$:/language/EditTemplate/Tags/Dropdown/Caption}}&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt; &lt;span class=&quot;tc-add-tag-button&quot;&gt;
+&lt;$button message=&quot;tm-add-tag&quot; param={{$:/temp/NewTagName}} set=&quot;$:/temp/NewTagName&quot; setTo=&quot;&quot; class=&quot;&quot;&gt;
+&lt;&lt;lingo Tags/Add/Button&gt;&gt;
+&lt;/$button&gt;
+&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;tc-block-dropdown-wrapper&quot;&gt;
+&lt;$reveal state=&lt;&lt;qualify &quot;$:/state/popup/tags-auto-complete&quot;&gt;&gt; type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+&lt;div class=&quot;tc-block-dropdown&quot;&gt;
+&lt;$linkcatcher set=&quot;$:/temp/NewTagName&quot; setTo=&quot;&quot; message=&quot;tm-add-tag&quot;&gt;
+&lt;$list filter=&quot;[tags[]!is[system]search:title{$:/temp/NewTagName}sort[]]&quot;&gt;
+{{||$:/core/ui/Components/tag-link}}
+&lt;/$list&gt;
+&lt;hr&gt;
+&lt;$list filter=&quot;[tags[]is[system]search:title{$:/temp/NewTagName}sort[]]&quot;&gt;
+{{||$:/core/ui/Components/tag-link}}
+&lt;/$list&gt;
+&lt;/$linkcatcher&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+&lt;/$fieldmangler&gt;
+&lt;/div&gt;</pre>
+</div>
 <div color="#7010f0" created="20170124165933000" fieldname="email" hide_in_edit_mode="" hide_in_view_mode="" label="email" modified="20170124165943900" title="$:/settings/AlternateTagFields/email" wikify="">
 <pre></pre>
 </div>
@@ -9838,8 +9886,8 @@ html .tc-tiddler-controls button {
 <div created="20170315172520811" modified="20170315172520811" title="$:/state/tab-1570668653">
 <pre>group</pre>
 </div>
-<div created="20170124152428800" modified="20170315192935614" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20170124152428800" modified="20170315220302526" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20170315172348836" modified="20170315172348836" title="$:/state/tab-554171683">
 <pre>Contacts</pre>
@@ -9853,10 +9901,10 @@ html .tc-tiddler-controls button {
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
 </div>
-<div created="20170124190210900" modified="20170228175857166" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/plugins/tongerner/toolbar/toolbar-display</pre>
+<div created="20170124190210900" modified="20170315220319996" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
 </div>
-<div list="index" title="$:/StoryList">
+<div list="$:/ControlPanel index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
