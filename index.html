@@ -9904,7 +9904,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124190210900" modified="20170315220319996" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
 </div>
-<div list="$:/ControlPanel index" title="$:/StoryList">
+<div list="index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -10069,7 +10069,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170228180100758" modified="20170315220122704" tags="$:/tags/SideBar" title="AddContact">
+<div created="20170228180100758" modified="20170315220724853" tags="$:/tags/SideBar" title="AddContact">
 <pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
 &lt;div class=&quot;tc-tiddler-frame&quot;&gt;
 
@@ -10087,11 +10087,9 @@ background-color:$(backgroundColor)$;
 &lt;br&gt;
 &lt;$edit field=&quot;group&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;group&quot;/&gt;
 
-&lt;$edit field=&quot;notes&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
+&lt;$edit field=&quot;text&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
 
-&lt;$set field=&quot;quickcontact&quot; tiddler={{$:/temp/Stealth!!newtitle}} value=&quot;!Mobile &lt;&lt;mobile&gt;&gt; SMS &lt;&lt;sms&gt;&gt; Phone &lt;&lt;phone&gt;&gt; E-mail &lt;&lt;email&gt;&gt;&quot;/&gt;
 
-&lt;$edit field=&quot;quick&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Phone&quot;/&gt;
 
 &lt;$button&gt;
 &lt;$action-setfield $tiddler={{$:/temp/Stealth!!newtitle}}  tags=&quot;contact&quot; $field=&quot;quickcontact&quot; $value=&quot;&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt;  &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;&quot;/&gt;
