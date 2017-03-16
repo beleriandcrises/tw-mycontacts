@@ -375,6 +375,8 @@ Error message and password prompt
 
 <li>Draft of 'location'</li>
 
+<li>favorite</li>
+
 <li>group</li>
 
 <li>index</li>
@@ -9861,7 +9863,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20170315172402095" modified="20170316113510632" title="$:/state/tab--111876673">
+<div created="20170315172402095" modified="20170316195234872" title="$:/state/tab--111876673">
 <pre>Contacts</pre>
 </div>
 <div created="20170124181402200" modified="20170315193556189" title="$:/state/tab--1498284803">
@@ -9950,7 +9952,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170316174852968" title="$:/temp/search">
+<div created="20170124171931100" modified="20170316195244037" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -10101,10 +10103,10 @@ ADD CONTACT
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315220046565" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
+<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170316195232274" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact favorite" title="anna karinina">
 <pre></pre>
 </div>
-<div created="20170124153416900" modified="20170316174846416" tags="" title="Contacts">
+<div created="20170124153416900" modified="20170316195151734" title="Contacts">
 <pre>\define makeState()
 &lt;&lt;qualify $(stateTiddler)$&gt;&gt;
 \end
@@ -10122,7 +10124,9 @@ ADD CONTACT
 &lt;/style&gt;
 
 {{$:/.tb/ui/AdvancedSearch/Field}}
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
+To mark a contact as favorite, clic on it and tic the box
+&lt;br&gt;
 
 ---
 
@@ -10132,14 +10136,16 @@ ADD CONTACT
 &lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
 
 &lt;h2&gt; 
-&lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;
+ &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;   
 &lt;/$button&gt;
 &lt;/h2&gt;
 &lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
 &lt;div class=&quot;mypopup&quot;&gt;
-&lt;$tiddler tiddler=&lt;&lt;mytitle&gt;&gt;&gt;
+&lt;$tiddler tiddler=&lt;&lt;mytitle&gt;&gt;&gt; 
 
-&lt;h1&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt; 
+
+&lt;$checkbox tag=&quot;favorite&quot;&gt;&lt;/$checkbox&gt; Favorite
 
 &lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt; field=quickcontact/&gt;
 
@@ -10186,6 +10192,35 @@ Delete selected
 <div modified="20170315225031356" title="Draft of 'location'">
 <pre></pre>
 </div>
+<div created="20170316195159597" modified="20170316195217548" tags="" title="favorite">
+<pre>&lt;$list filter=&quot;[tag[contact]tag[favorite]!prefix[Draft]!is[system]]&quot; variable=&quot;mytitle&quot;&gt;
+
+&lt;$set name=&quot;stateTiddler&quot; filter=&quot;[&lt;mytitle&gt;addprefix[$:/temp/state/]]&quot; emptyValue=error&gt;
+&lt;$wikify name=&quot;qualstate&quot; text=&lt;&lt;makeState&gt;&gt;&gt;
+
+&lt;h2&gt; 
+ &lt;$button class=&quot;tc-btn-invisible&quot; popup=&lt;&lt;qualstate&gt;&gt;&gt;&lt;$text text=&lt;&lt;mytitle&gt;&gt;/&gt;   
+&lt;/$button&gt;
+&lt;/h2&gt;
+&lt;$reveal type=&quot;popup&quot; position=&quot;below&quot; state=&lt;&lt;qualstate&gt;&gt;&gt;
+&lt;div class=&quot;mypopup&quot;&gt;
+&lt;$tiddler tiddler=&lt;&lt;mytitle&gt;&gt;&gt; 
+
+&lt;h1&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h1&gt; 
+
+&lt;$checkbox tag=&quot;favorite&quot;&gt;&lt;/$checkbox&gt; Favorite
+
+&lt;$transclude tiddler=&lt;&lt;mytitle&gt;&gt; field=quickcontact/&gt;
+
+&lt;/$tiddler&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/$wikify&gt;
+&lt;/$set&gt;
+&lt;/$list&gt;
+
+</pre>
+</div>
 <div created="20170228174513549" modified="20170315225009675" tags="" title="group">
 <pre>!Group
 
@@ -10200,10 +10235,16 @@ Delete selected
 &lt;/$set&gt;
 </pre>
 </div>
-<div created="20170315172303205" modified="20170315215055427" tags="" title="index">
-<pre>&lt;&lt;tabs  &quot;Contacts location group delete&quot;&gt;&gt;</pre>
+<div created="20170315172303205" modified="20170316195056020" tags="index" title="index">
+<pre>&lt;style&gt;
+.tc-tagged-index .tc-tab-buttons{
+font-size:1.5em;
+}
+&lt;/style&gt;
+
+&lt;&lt;tabs  &quot;favorite Contacts delete&quot;&gt;&gt;</pre>
 </div>
-<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170315215951267" phonenumber="23664780978" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact" title="Jack">
+<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170316193848663" phonenumber="23664780978" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact" title="Jack">
 <pre></pre>
 </div>
 <div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170315220025874" phonenumber="477757" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact $:/tags/template" title="john">
