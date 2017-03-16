@@ -9861,7 +9861,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20170315172402095" modified="20170316113112556" title="$:/state/tab--111876673">
+<div created="20170315172402095" modified="20170316113510632" title="$:/state/tab--111876673">
 <pre>Contacts</pre>
 </div>
 <div created="20170124181402200" modified="20170315193556189" title="$:/state/tab--1498284803">
@@ -9906,7 +9906,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124190210900" modified="20170316113023159" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
-<div list="structure index" title="$:/StoryList">
+<div list="index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -9950,7 +9950,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170316112958367" title="$:/temp/search">
+<div created="20170124171931100" modified="20170316174852968" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -10104,10 +10104,22 @@ ADD CONTACT
 <div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170315220046565" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact" title="anna karinina">
 <pre></pre>
 </div>
-<div created="20170124153416900" modified="20170315205808483" tags="" title="Contacts">
+<div created="20170124153416900" modified="20170316174846416" tags="" title="Contacts">
 <pre>\define makeState()
 &lt;&lt;qualify $(stateTiddler)$&gt;&gt;
 \end
+
+&lt;style&gt;
+.mypopup {
+    max-width:100%;
+    border: 1px solid #bbb;
+    background-color: #ffffff;
+    padding: 1em;
+    margin: 4px 0 0 0;
+    text-shadow: none;
+    line-height: 1.4;
+}
+&lt;/style&gt;
 
 {{$:/.tb/ui/AdvancedSearch/Field}}
 &lt;br&gt;&lt;br&gt;
@@ -10138,17 +10150,7 @@ ADD CONTACT
 &lt;/$set&gt;
 &lt;/$list&gt;
 
-&lt;style&gt;
-.mypopup {
-    min-width: 380px;
-    border: 1px solid #bbb;
-    background-color: #ffffff;
-    padding: 1em;
-    margin: 4px 0 0 0;
-    text-shadow: none;
-    line-height: 1.4;
-}
-&lt;/style&gt;</pre>
+</pre>
 </div>
 <div created="20170315193641872" modified="20170315212100038" tags="" title="ContactTable">
 <pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
