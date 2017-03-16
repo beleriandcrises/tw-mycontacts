@@ -9906,7 +9906,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124190210900" modified="20170316113023159" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
-<div list="index" title="$:/StoryList">
+<div list="structure index" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
@@ -10243,7 +10243,7 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 {{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
 &lt;/$button&gt;</pre>
 </div>
-<div created="20170124203842700" modified="20170315215234590" tags="menu" title="structure">
+<div created="20170124203842700" modified="20170316113345656" tags="menu" title="structure">
 <pre>all the macros I use are utterly simple, just providing me (and you) a easier way to change order and fiddle.
 I've probably overdone encapsulating one inside the other though, so here is what's here
 
@@ -10270,12 +10270,16 @@ by pressing the top, this one: &gt;&gt; {{$:/plugins/tongerner/toolbar/images/ne
 Every field sets the contact field, while the button &quot;ADD CONTACT&quot; only adds the contact tag and the text in the quickcontact custom field, and then erases the temporary tiddler.
 That's right: if you don't press the button the tiddler gets created anyway, but without tag and macros.
 
+If you use the [[AddContact]] page you ''must'' press save before leaving the wiki or the changes will be discarded. That is why you have the &quot;save&quot; button on the toolbar.
+
 !! contact 
 email, phone numbers and such are displayed using the gentag plugin because by using custom field only I couldn't get the buttons to display each phone number separately. The text field is left undisturbed for your notes, ideas, and such
 
 !! editing a contact
 this is probably the only annoying thing to do from mobile phone. You can either open the tiddler and edit it or go to the [[ContactTable]] and edit from there by clicking on the cell.
 If you edit the [[ContactTable]] tiddler you may notice how easy it is to add a new field, which will be automatically created the moment you edit it.
+
+If you go to [[AddContact]] and put the contact name you can edit it directly from there, which is something I incidentally discovered!
 
 !! What if I need more default fields?
 
