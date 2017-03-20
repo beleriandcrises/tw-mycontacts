@@ -361,6 +361,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
+<li>$:/tw-mycontacts/ViewTemplate/quickcontact</li>
+
 <li>AddContact</li>
 
 <li>anna karinina</li>
@@ -9858,13 +9860,13 @@ background-color:$(backgroundColor)$;
 <div created="20170124153928000" modified="20170228165423711" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170124180327900" modified="20170228172718156" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20170124180327900" modified="20170320215353360" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
-<div created="20170315172402095" modified="20170317105326021" title="$:/state/tab--111876673">
+<div created="20170315172402095" modified="20170320193959713" title="$:/state/tab--111876673">
 <pre>Contacts</pre>
 </div>
-<div created="20170124181402200" modified="20170315193556189" title="$:/state/tab--1498284803">
+<div created="20170124181402200" modified="20170320215332473" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
 </div>
 <div created="20170124153853900" modified="20170316113024858" title="$:/state/tab--1963855381">
@@ -9897,8 +9899,8 @@ background-color:$(backgroundColor)$;
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170317105337503" title="$:/state/tab/sidebar--1835078512">
-<pre>tableofcontents</pre>
+<div created="20170124170956000" modified="20170320215212566" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
@@ -9912,8 +9914,8 @@ background-color:$(backgroundColor)$;
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
 <pre></pre>
 </div>
-<div case-insensitive="(?i)" created="20170124171937300" field="" modified="20170317105329809" title="$:/temp/advancedsearch">
-<pre></pre>
+<div case-insensitive="(?i)" created="20170124171937300" field="" modified="20170320215338891" title="$:/temp/advancedsearch">
+<pre>[prefix[Draft]]</pre>
 </div>
 <div created="20170228172301280" modified="20170228172302609" title="$:/temp/edit/Jack/phonenumber">
 <pre>noedit</pre>
@@ -9950,7 +9952,7 @@ background-color:$(backgroundColor)$;
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170317104523586" title="$:/temp/search">
+<div created="20170124171931100" modified="20170320212817326" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
@@ -10071,7 +10073,10 @@ background-color:$(backgroundColor)$;
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170228180100758" modified="20170316200026377" title="AddContact">
+<div created="20170320214825767" modified="20170320214956615" tags="$:/tags/ViewTemplate" title="$:/tw-mycontacts/ViewTemplate/quickcontact">
+<pre>{{!!quickcontact}}</pre>
+</div>
+<div created="20170228180100758" modified="20170320203750641" title="AddContact">
 <pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
 &lt;div class=&quot;tc-tiddler-frame&quot;&gt;
 
@@ -10090,9 +10095,8 @@ background-color:$(backgroundColor)$;
 &lt;$edit field=&quot;text&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
 
 
-
 &lt;$button&gt;
-&lt;$action-setfield $tiddler={{$:/temp/Stealth!!newtitle}}  tags=&quot;contact&quot; $field=&quot;quickcontact&quot; $value=&quot;&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt;  &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;&quot;/&gt;
+&lt;$action-setfield $tiddler={{$:/temp/Stealth!!newtitle}}  tags=&quot;contact&quot; $field=&quot;quickcontact&quot; $value=&quot;&lt;&lt;mobile&gt;&gt;  &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;&quot;/&gt;
 
 &lt;$action-setfield $tiddler=&quot;$:/temp/Stealth&quot; $field=&quot;newtitle&quot; $value=&quot;&quot;/&gt;
 
@@ -10101,8 +10105,8 @@ ADD CONTACT
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20170228224242090" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170316200241812" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact favorite" title="anna karinina">
-<pre></pre>
+<div created="20170320210938602" email="" group="poker" hide_in_edit_mode="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170320211005772" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact favorite" title="anna karinina">
+<pre>hello this is a quick test</pre>
 </div>
 <div created="20170124153416900" modified="20170316195151734" title="Contacts">
 <pre>\define makeState()
@@ -10296,7 +10300,7 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 {{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
 &lt;/$button&gt;</pre>
 </div>
-<div created="20170124203842700" modified="20170317104759456" tags="menu" title="structure">
+<div created="20170124203842700" modified="20170320215327965" tags="menu" title="structure">
 <pre>all the macros I use are utterly simple, just providing me (and you) a easier way to change order and fiddle.
 I've probably overdone encapsulating one inside the other though, so here is what's here
 
@@ -10324,6 +10328,10 @@ Every field sets the contact field, while the button &quot;ADD CONTACT&quot; onl
 That's right: if you don't press the button the tiddler gets created anyway, but without tag and macros.
 
 If you use the [[AddContact]] page you ''must'' press save before leaving the wiki or the changes will be discarded. That is why you have the &quot;save&quot; button on the toolbar.
+
+The custom fields with the macros of the buttons to call, send email and texts is called quickcontact, and is added on every contact.
+
+It is also displayed by default thanks to the rule defined by [[$:/tw-mycontacts/ViewTemplate/quickcontact]], which simply adds the translusion of the field in the body of the view mode.
 
 !! contact 
 email, phone numbers and such are displayed using the gentag plugin because by using custom field only I couldn't get the buttons to display each phone number separately. The text field is left undisturbed for your notes, ideas, and such
