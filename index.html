@@ -243,19 +243,33 @@ Error message and password prompt
 
 <li>$:/contacts/macro/contactpage</li>
 
+<li>$:/contacts/macro/quickedit</li>
+
 <li>$:/contacts/Template/NewContact</li>
 
 <li>$:/contacts/ui/Buttons/addContact</li>
 
+<li>$:/contacts/ViewTemplate/editcontact</li>
+
+<li>$:/contacts/ViewTemplate/quickcontact</li>
+
+<li>$:/contacts/ViewTemplate/quickedit</li>
+
 <li>$:/core</li>
 
 <li>$:/core/ui/Buttons/encryption</li>
+
+<li>$:/core/ui/ViewTemplate/subtitle</li>
+
+<li>$:/core/ui/ViewTemplate/tags</li>
 
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/plugins/inmysocks/GenericTagFields/template/ViewTemplate/OtherTagFieldsViewTemplate</li>
 
 <li>$:/plugins/inmysocks/GenTags</li>
 
@@ -361,11 +375,11 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
-<li>$:/tw-mycontacts/ViewTemplate/quickcontact</li>
-
 <li>AddContact</li>
 
 <li>anna karinina</li>
+
+<li>changelog</li>
 
 <li>Contacts</li>
 
@@ -374,6 +388,8 @@ Error message and password prompt
 <li>ControlPanel</li>
 
 <li>delete</li>
+
+<li>EditContact</li>
 
 <li>favorite</li>
 
@@ -888,7 +904,7 @@ Error message and password prompt
 &lt;p style=&quot;border:3px solid black; padding-left: 6px; margin-left:8px; margin-right:8px; border-radius:10px; font-size:25px; text-decoration: none;&quot;&gt;
 \end</pre>
 </div>
-<div created="20170124172435700" modified="20170315204013122" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
+<div created="20170124172435700" modified="20170321211527510" tags="$:/tags/Macro" title="$:/contacts/macro/contactpage">
 <pre>\define mobile()
 &lt;$list filter=&quot;[all[current]tag[contact]tags:mobilenumber[]]&quot;&gt;
 &lt;$vars mobilenumber=&lt;&lt;currentTiddler&gt;&gt;&gt;
@@ -920,6 +936,22 @@ Error message and password prompt
 &lt;&lt;mailto&gt;&gt;
 &lt;/$vars&gt;
 &lt;/$list&gt;
+\end
+
+\define quickcontact()
+&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;
+\end</pre>
+</div>
+<div created="20170322113258144" modified="20170322115855073" tags="$:/tags/Macro" title="$:/contacts/macro/quickedit">
+<pre>\define quickedit()
+
+&lt;$button&gt;
+
+&lt;$action-setfield $tiddler=&quot;$:/temp/Stealth&quot; newtitle={{!!title}}/&gt;
+&lt;$action-navigate $to=&quot;EditContact&quot;/&gt;
+Edit contact
+&lt;/$button&gt;
+
 \end</pre>
 </div>
 <div created="20170124152622800" email="" jabber="" modified="20170124200831100" tags="contact $:/tags/template" title="$:/contacts/Template/NewContact">
@@ -950,6 +982,15 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/contacts/Template/NewContact!!caption}}/&gt;&lt;/span&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;</pre>
+</div>
+<div created="20170322113151440" modified="20170322113217149" tags="$:/tags/ViewTemplate" title="$:/contacts/ViewTemplate/editcontact">
+<pre>{{!!editcontact}}</pre>
+</div>
+<div created="20170320214825767" modified="20170322114343485" tags="$:/tags/ViewTemplate" title="$:/contacts/ViewTemplate/quickcontact">
+<pre>{{!!quickcontact}}</pre>
+</div>
+<div created="20170322114353426" modified="20170322114415090" tags="$:/tags/ViewTemplate" title="$:/contacts/ViewTemplate/quickedit">
+<pre>{{!!quickedit}}</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.13">
 <pre>{
@@ -8621,6 +8662,21 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;/$button&gt;
 &lt;/$reveal&gt;</pre>
 </div>
+<div created="20170321213000975" modified="20170321213000975" title="$:/core/ui/ViewTemplate/subtitle">
+<pre>&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+&lt;div class=&quot;tc-subtitle&quot;&gt;
+&lt;$link to={{!!modifier}}&gt;
+&lt;$view field=&quot;modifier&quot;/&gt;
+&lt;/$link&gt; &lt;$view field=&quot;modified&quot; format=&quot;date&quot; template={{$:/language/Tiddler/DateFormat}}/&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+</pre>
+</div>
+<div created="20170321212628671" modified="20170321212628671" title="$:/core/ui/ViewTemplate/tags">
+<pre>&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+&lt;div class=&quot;tc-tags-wrapper&quot;&gt;&lt;$list filter=&quot;[all[current]tags[]sort[title]]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot;/&gt;&lt;/div&gt;
+&lt;/$reveal&gt;</pre>
+</div>
 <div created="20170124152417200" modified="20170315172545953" title="$:/DefaultTiddlers">
 <pre>index</pre>
 </div>
@@ -8631,6 +8687,36 @@ class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
+</div>
+<div created="20170321211734734" list-after="$:/core/ui/ViewTemplate/tags" modified="20170321211734734" title="$:/plugins/inmysocks/GenericTagFields/template/ViewTemplate/OtherTagFieldsViewTemplate">
+<pre>&lt;$list
+    filter='[prefix[$:/settings/AlternateTagFields/]!hide_in_view_mode[true]]'
+    variable=FieldInfo
+&gt;
+    &lt;$set
+        name=WikifyTags
+        filter='[&lt;FieldInfo&gt;get[wikify]]'
+    &gt;
+        &lt;$set
+            name=FieldName
+            filter='[&lt;FieldInfo&gt;get[fieldname]]'
+        &gt;
+            &lt;$set
+                name=FieldLabel
+                filter='[&lt;FieldInfo&gt;get[label]]'
+            &gt;
+                &lt;$macrocall
+                    $name=TagLikeList
+                    fieldName=&lt;&lt;FieldName&gt;&gt;
+                    label=&lt;&lt;FieldLabel&gt;&gt;
+                    showEmpty=False
+                    wikify=&lt;&lt;WikifyTags&gt;&gt;
+                /&gt;
+            &lt;/$set&gt;
+        &lt;/$set&gt;
+    &lt;/$set&gt;
+&lt;/$list&gt;
+</pre>
 </div>
 <div author="inmysocks" core-version="&gt;=5.1.0" dependents="" description="A plugin to let any field be used like the tags field" plugin-type="plugin" source="" title="$:/plugins/inmysocks/GenTags" type="application/json" version="0.0.1">
 <pre>{
@@ -9860,14 +9946,14 @@ background-color:$(backgroundColor)$;
 <div created="20170124153928000" modified="20170228165423711" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170124180327900" modified="20170320215353360" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20170124180327900" modified="20170320220104544" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20170315172402095" modified="20170320193959713" title="$:/state/tab--111876673">
+<div created="20170315172402095" modified="20170321214248547" title="$:/state/tab--111876673">
 <pre>Contacts</pre>
 </div>
-<div created="20170124181402200" modified="20170320215332473" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20170124181402200" modified="20170322114328968" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20170124153853900" modified="20170316113024858" title="$:/state/tab--1963855381">
 <pre>$:/plugins/tongerner/layout_adjustment/tweaks</pre>
@@ -9899,8 +9985,8 @@ background-color:$(backgroundColor)$;
 <div created="20170124191502200" modified="20170124191502200" title="$:/state/tab-797972321">
 <pre>$:/plugins/tongerner/toolbar/settings</pre>
 </div>
-<div created="20170124170956000" modified="20170320215212566" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20170124170956000" modified="20170322114237744" title="$:/state/tab/sidebar--1835078512">
+<pre>tableofcontents</pre>
 </div>
 <div created="20170124180223400" modified="20170124180223400" title="$:/state/tables/Sort/Row/email group jabber location mobilenumber phonenumber">
 <pre>jabber</pre>
@@ -9908,14 +9994,14 @@ background-color:$(backgroundColor)$;
 <div created="20170124190210900" modified="20170316113023159" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditToolbar</pre>
 </div>
-<div list="index" title="$:/StoryList">
+<div list="changelog index Jack" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170228223643736" modified="20170228223643736" title="$:/temp/{{" title}}-791620041="(317,606,171,71)">
 <pre></pre>
 </div>
-<div case-insensitive="(?i)" created="20170124171937300" field="" modified="20170320215338891" title="$:/temp/advancedsearch">
-<pre>[prefix[Draft]]</pre>
+<div case-insensitive="(?i)" created="20170124171937300" field="" modified="20170322115842978" title="$:/temp/advancedsearch">
+<pre>quickedit</pre>
 </div>
 <div created="20170228172301280" modified="20170228172302609" title="$:/temp/edit/Jack/phonenumber">
 <pre>noedit</pre>
@@ -9952,13 +10038,13 @@ background-color:$(backgroundColor)$;
 <div created="20170124163411300" modified="20170124205037900" title="$:/temp/NewTagName/phonenumber">
 <pre></pre>
 </div>
-<div created="20170124171931100" modified="20170320212817326" title="$:/temp/search">
+<div created="20170124171931100" modified="20170321211606725" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20170124152438300" fieldname="" hide_in_edit_mode="" hide_in_view_mode="" label="" modified="20170124165933100" title="$:/temp/Settings/AlternateTagFields" wikify="">
 <pre></pre>
 </div>
-<div created="20170228224431386" modified="20170315223152441" newtitle="" title="$:/temp/Stealth">
+<div created="20170228224431386" modified="20170322115905828" newtitle="Jack" title="$:/temp/Stealth">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
@@ -10073,9 +10159,6 @@ background-color:$(backgroundColor)$;
 <div created="20170124153856100" modified="20170124153856100" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170320214825767" modified="20170320214956615" tags="$:/tags/ViewTemplate" title="$:/tw-mycontacts/ViewTemplate/quickcontact">
-<pre>{{!!quickcontact}}</pre>
-</div>
 <div created="20170228180100758" modified="20170320203750641" title="AddContact">
 <pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
 &lt;div class=&quot;tc-tiddler-frame&quot;&gt;
@@ -10105,8 +10188,21 @@ ADD CONTACT
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20170320210938602" email="" group="poker" hide_in_edit_mode="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170320211005772" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact favorite" title="anna karinina">
+<div created="20170321130245700" email="" group="poker" jabber="" location="dublin ireland" mobilenumber="333849958827" modified="20170322115151541" quickcontact="&lt;&lt;quickcontact&gt;&gt;" quickedit="&lt;&lt;quickedit&gt;&gt;" tags="contact favorite" title="anna karinina">
 <pre>hello this is a quick test</pre>
+</div>
+<div created="20170320220109657" modified="20170322115935673" tags="menu" title="changelog">
+<pre>!0.1
+did the all thing
+
+! 0.2
+* removed the tags field and the subtitle in view mode by removing the `$:/tags/ViewTemplate` tag from the pages [[$:/core/ui/ViewTemplate/tags]], [[$:/core/ui/ViewTemplate/subtitle]] and [[$:/plugins/inmysocks/GenericTagFields/template/ViewTemplate/OtherTagFieldsViewTemplate]]
+* added the button to edit contact in view mode
+
+
+* added a macro called `&lt;&lt;quickcontact&gt;&gt;` in [[$:/contacts/macro/contactpage]] that contains the  `&lt;&lt;mobile&gt;&gt;  &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;` to make it easier to mantain in the future
+
+</pre>
 </div>
 <div created="20170124153416900" modified="20170316195151734" title="Contacts">
 <pre>\define makeState()
@@ -10191,6 +10287,36 @@ Delete selected
 
 &lt;/$list&gt;</pre>
 </div>
+<div created="20170322115822826" modified="20170322115832667" tags="" title="EditContact">
+<pre>\define getProperTag() {{$(properTitle)$||$:/core/ui/EditTemplate/tags}} 
+&lt;div class=&quot;tc-tiddler-frame&quot;&gt;
+
+Edit ''{{$:/temp/Stealth!!newtitle}}''
+
+
+&lt;$edit field=&quot;mobilenumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Mobile&quot;/&gt;
+
+&lt;$edit field=&quot;phoneNumber&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;Phone&quot;/&gt;
+&lt;br&gt;
+&lt;$edit field=&quot;email&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;email&quot;/&gt;
+
+&lt;$edit field=&quot;location&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;location&quot;/&gt;
+&lt;br&gt;
+&lt;$edit field=&quot;group&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;group&quot;/&gt;
+
+&lt;$edit field=&quot;text&quot; class=&quot;tc-edit-texteditor&quot; tiddler={{$:/temp/Stealth!!newtitle}} placeholder=&quot;notes&quot;/&gt;
+
+
+&lt;$button&gt;
+&lt;$action-setfield $tiddler={{$:/temp/Stealth!!newtitle}}  tags=&quot;contact&quot; $field=&quot;quickcontact&quot; $value=&quot;&lt;&lt;mobile&gt;&gt;  &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;&quot;/&gt;
+
+&lt;$action-setfield $tiddler=&quot;$:/temp/Stealth&quot; $field=&quot;newtitle&quot; $value=&quot;&quot;/&gt;
+
+EDIT CONTACT
+&lt;/$button&gt;
+
+&lt;/div&gt;</pre>
+</div>
 <div created="20170316195159597" modified="20170316200234456" tags="" title="favorite">
 <pre>\define makeState()
 &lt;&lt;qualify $(stateTiddler)$&gt;&gt;
@@ -10258,10 +10384,10 @@ font-size:1.5em;
 
 &lt;&lt;tabs  &quot;favorite Contacts delete location group&quot;&gt;&gt;</pre>
 </div>
-<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170316193848663" phonenumber="23664780978" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact" title="Jack">
+<div created="20170124163331000" email="jack@pokemail.net" group="friends football" jabber="" location="dublin ireland" mobilenumber="1122334455 44434255536 1222234544" modified="20170322114229749" phonenumber="23664780978" quickcontact="&lt;&lt;quickcontact&gt;&gt;" quickedit="&lt;&lt;quickedit&gt;&gt;" tags="contact" title="Jack">
 <pre></pre>
 </div>
-<div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170315220025874" phonenumber="477757" quickcontact="&lt;&lt;mobile&gt;&gt; &lt;&lt;sms&gt;&gt; &lt;&lt;phone&gt;&gt; &lt;&lt;email&gt;&gt;" tags="contact $:/tags/template" title="john">
+<div created="20170124204946500" email="johntiddler@foomail.net" group="travel beerlover" jabber="theguy@dukgo.net" location="Paris france" mobilenumber="666777588" modified="20170322115220040" phonenumber="477757" quickcontact="&lt;&lt;quickcontact&gt;&gt;" quickedit="&lt;&lt;quickedit&gt;&gt;" tags="contact $:/tags/template" title="john">
 <pre>NEVER mention his cousin</pre>
 </div>
 <div created="20170124162718600" modified="20170315201214666" tags="" title="licenses">
@@ -10300,7 +10426,7 @@ The following images are licensed with [[Creative Common 3.0 BY|http://creativec
 {{$:/plugins/tongerner/toolbar/images/new-template-tiddler-button}}
 &lt;/$button&gt;</pre>
 </div>
-<div created="20170124203842700" modified="20170320215327965" tags="menu" title="structure">
+<div created="20170124203842700" modified="20170322114106378" tags="menu" title="structure">
 <pre>all the macros I use are utterly simple, just providing me (and you) a easier way to change order and fiddle.
 I've probably overdone encapsulating one inside the other though, so here is what's here
 
@@ -10317,6 +10443,7 @@ I've probably overdone encapsulating one inside the other though, so here is wha
 *[[Table Macros]] by Jed Carty
 *[[$:/contacts/macro/connect]] has the 4 macros to create mobile call, phone call, mailto and send sms
 *[[$:/contacts/macro/contactpage]] has the macro to insert the contact macro inside the user page, passing the variables
+* [[$:/contacts/macro/quickedit]] holds the code for the button &quot;edit contact&quot;, which gives the name of the tiddler to [[$:/temp/Stealth]] and then redirects you to [[AddContact]]. It is in the `quickedit` field.
 
 ! workflow
 
